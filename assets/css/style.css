@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@font-face {
+  font-family: "Helvetica";
+  src: url("../fonts/Helvetica.ttf") format("ttf");
+  font-family: "LucidaGrande";
+  src: url("../fonts/LucidaGrande.ttf") format("ttf");
+}
+:root {
+  --magnifier: 6;
+  --gap: 1vmin;
+  --transition: 0.5s;
+}
+.mid-image {
+  width: 379px;
+  height: 282px;
+}
+.mid-image img {
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 40%, 50% 40%);
+  border-radius: 6px;
+}
+.bottom-img img {
+  clip-path: polygon(60% 40%, 100% 40%, 100% 100%, 0 100%, 0 0, 60% 0);
+  border-radius: 6px;
+}
+.top-image {
+  width: 429px;
+  height: 255px;
+}
+
+.bottom-img {
+  width: 359px;
+  height: 267px;
+}
+.Inter {
+  font-family: "Inter", sans-serif;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.Helvetica {
+  font-family: Helvetica;
+}
+.capture > div {
+  --brightness: 0.75;
+  --grayscale: 1;
+  transition: flex var(--transition), filter var(--transition);
+  filter: grayscale(var(--grayscale)) brightness(var(--brightness));
+  object-fit: cover;
+  overflow: hidden;
+  flex: 1;
+}
+.capture div:hover {
+  --brightness: 1.15;
+  --grayscale: 0;
+  flex: var(--magnifier);
+}
+.dark-blue {
+  color: #062645;
+}
+.bg-dark-blue {
+  background-color: #062645 !important;
+}
+.green {
+  color: #4baaa2;
+}
+.LucidaGrande {
+  font-family: "LucidaGrande";
+}
+.light-blue {
+  background-color: #e3f7ff;
+}
+.filter-color {
+  color: rgba(0, 0, 0, 0.5);
+}
