@@ -70,6 +70,59 @@
 .light-blue {
   background-color: #e3f7ff;
 }
+.dark-red {
+  color: #91112b;
+}
 .filter-color {
   color: rgba(0, 0, 0, 0.5);
+}
+.border-blue {
+  border: 1px solid #062645;
+}
+.bg-green {
+  background: rgba(52, 168, 83, 0.1);
+}
+.bg-light-blue {
+  background: rgba(0, 102, 204, 0.1);
+}
+.valid {
+  color: #138c2d;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.valid:before {
+  position: relative;
+  left: -4px;
+  top: 4px;
+  content: "";
+  background-image: url("../icons/ok.svg");
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  display: inline-block;
+}
+
+.invalid {
+  color: #000;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.invalid:before {
+  position: relative;
+  left: -4px;
+  top: 4px;
+  content: "";
+  background-image: url("../icons/false.svg");
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  display: inline-block;
 }

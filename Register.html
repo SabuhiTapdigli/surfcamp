@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+  <section class="bg-white max-w-[489px] m-auto">
+    <div
+      class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-4"
+    >
+      <a
+        href="#"
+        class="flex flex-col items-center text-2xl font-semibold text-gray-900 dark:text-white"
+      >
+        <img
+          class="mr-2"
+          src="./assets//images/soul_surf_logo_blue.svg"
+          alt="logo"
+        />
+        <span class="Helvetica font-normal text-xl mt-6 mb-6">Register</span>
+      </a>
+
+      <form class="w-full" action="#">
+        <div class="flex flex-wrap gap-4">
+          <input
+            type="name"
+            name="name"
+            id="name"
+            class="w-[45%] border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+            placeholder="First Name"
+            required=""
+          />
+          <input
+            type="surname"
+            name="surname"
+            id="surname"
+            class="w-[50%] border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+            placeholder="Last Name"
+            required=""
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+            placeholder="Gmail"
+            required=""
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+            required=""
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            placeholder="Confirm Password"
+            class="w-full border-none mb-2 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+            required=""
+          />
+        </div>
+        <p class="Helvetica text-xs font-normal leading-normal opacity-50">
+          By continuing, you accept our Terms of Use and confirm that you have
+          read our Privacy Policy.
+        </p>
+
+        <ol class="relative mt-6 text-gray-500">
+          <li class="mb-2 flex items-center">
+            <p id="length" class="text-base invalid">At Least 8 character</p>
+          </li>
+          <li class="mb-2 flex items-center">
+            <p id="number" class="text-base invalid">1 Number</p>
+          </li>
+          <li class="mb-2 flex items-center">
+            <p id="uppercase" class="text-base invalid">1 Uppercase</p>
+          </li>
+          <li class="flex items-center">
+            <p id="lowercase" class="text-base invalid">1 Lowercase</p>
+          </li>
+        </ol>
+
+        <div class="flex gap-6 justify-center items-center my-6">
+          <div class="w-[100px] h-[0.4px] opacity-50 bg-dark-blue"></div>
+          <span>Or</span>
+          <div class="w-[100px] h-[0.4px] opacity-50 bg-dark-blue"></div>
+        </div>
+        <div class="flex gap-4 justify-center items-center my-12">
+          <a
+            href=""
+            class="w-[98px] h-[39px] bg-green flex justify-center items-center"
+          >
+            <img src="./assets/icons/Google_icon.svg" />
+          </a>
+          <a
+            href=""
+            class="w-[98px] h-[39px] bg-light-blue flex justify-center items-center"
+          >
+            <img src="./assets/icons/Facebook_icon.svg" />
+          </a>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="w-full text-white font-medium rounded-lg text-base Helvetica px-5 py-2.5 text-center bg-dark-blue"
+          >
+            Continue
+          </button>
+          <button
+            type="submit"
+            class="w-full text-dark-blue mt-5 font-medium border-blue rounded-lg text-base Helvetica px-5 py-2.5 text-center bg-white"
+          >
+            Login as School
+          </button>
+          <p
+            class="mt-5 text-center text-sm font-normal text-dark-blue Helvetica"
+          >
+            Already Have Account?
+            <a
+              href="./Login.html"
+              class="font-bold Helvetica text-primary-600 hover:underline dark:text-primary-500"
+              >Login</a
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script>
+    var myInput = document.getElementById("password");
+    var length = document.getElementById("length");
+    var number = document.getElementById("number");
+    var uppercase = document.getElementById("uppercase");
+    var lowercase = document.getElementById("lowercase");
+
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function () {
+      // Validate lowercase letters
+      var lowerCaseLetters = /[a-z]/g;
+      if (myInput.value.match(lowerCaseLetters)) {
+        lowercase.classList.remove("invalid");
+        lowercase.classList.add("valid");
+      } else {
+        lowercase.classList.remove("valid");
+        lowercase.classList.add("invalid");
+      }
+
+      // Validate capital letters
+      var upperCaseLetters = /[A-Z]/g;
+      if (myInput.value.match(upperCaseLetters)) {
+        uppercase.classList.remove("invalid");
+        uppercase.classList.add("valid");
+      } else {
+        uppercase.classList.remove("valid");
+        uppercase.classList.add("invalid");
+      }
+
+      // Validate numbers
+      var numbers = /[0-9]/g;
+      if (myInput.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+
+      // Validate length
+      if (myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    };
+  </script>
+</html>
