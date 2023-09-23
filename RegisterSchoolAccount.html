@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+  <section class="bg-white max-w-[489px] m-auto">
+    <div
+      class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
+    >
+      <a
+        href="#"
+        class="flex flex-col items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+      >
+        <img
+          class="mr-2"
+          src="./assets//images/soul_surf_logo_blue.svg"
+          alt="logo"
+        />
+        <span class="Helvetica font-normal text-xl mt-16 mb-7"
+          >Create a New School Profile</span
+        >
+      </a>
+
+      <form class="w-full" action="#">
+        <div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+            placeholder="Gmail"
+            required=""
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+            required=""
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            placeholder="Confirm Password"
+            class="w-full border-none mb-2 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+            required=""
+          />
+        </div>
+        <span class="Helvetica text-xs opacity-50 font-normal text-normal"
+          >By continuing, you accept our Terms of Use and confirm that you have
+          read our Privacy Policy.</span
+        >
+
+        <div>
+          <a
+            type="submit"
+            class="w-full block text-white font-medium rounded-lg text-base Helvetica px-5 py-2.5 text-center bg-dark-blue mt-12"
+          >
+            Create
+          </a>
+
+          <p
+            class="mt-5 text-center text-sm font-normal text-dark-blue Helvetica"
+          >
+            I Have Already School Account
+            <a
+              href="./LoginSchoolAccount.html"
+              class="font-bold Helvetica text-primary-600 hover:underline dark:text-primary-500"
+              >Login</a
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+</html>
