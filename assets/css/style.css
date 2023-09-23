@@ -10,6 +10,9 @@
   --gap: 1vmin;
   --transition: 0.5s;
 }
+video {
+  width: 100%;
+}
 .mid-image {
   width: 379px;
   height: 282px;
@@ -57,6 +60,9 @@
 }
 .dark-blue {
   color: #062645;
+}
+.blue {
+  color: #1f4df2;
 }
 .bg-dark-blue {
   background-color: #062645 !important;

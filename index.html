@@ -245,9 +245,9 @@
       </nav>
     </header>
 
-    <section class="bg-center h-full xl:h-[780px] bg-black">
+    <section class="relative bg-center h-full xl:h-[780px] bg-black">
       <div
-        class="px-4 mx-auto text-center py-20 lg:py-56 mx-auto max-w-screen-xl"
+        class="px-4 relative z-10 mx-auto text-center py-20 lg:py-56 mx-auto max-w-screen-xl"
       >
         <h1
           class="custom-font mb-4 text-left text-4xl font-normal font-400 tracking-tight leading-none text-white md:text-5xl lg:text-6xl"
@@ -274,7 +274,7 @@
         </div>
       </div>
       <!-- filter -->
-      <div class="mx-auto max-w-screen-xl px-4">
+      <div class="mx-auto max-w-screen-xl px-4 relative z-10">
         <div>
           <h1
             class="text-base text-normal Helvetica text-center text-white mb-8"
@@ -424,6 +424,13 @@
           </div>
         </div>
       </div>
+      <video
+        src="./assets/video/bgvideo.mp4"
+        class="absolute top-0 z-0"
+        autoplay="{true}"
+        loop
+        muted
+      ></video>
       <!-- end -->
     </section>
 
