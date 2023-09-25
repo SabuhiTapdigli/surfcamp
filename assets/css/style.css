@@ -74,7 +74,7 @@ video {
   font-family: "LucidaGrande";
 }
 .light-blue {
-  background-color: #e3f7ff;
+  background-color: #e3f7ff !important;
 }
 .dark-red {
   color: #91112b;
@@ -131,4 +131,83 @@ video {
   height: 20px;
   background-size: cover;
   display: inline-block;
+}
+.border-uncomplete {
+  border-radius: 20px !important;
+  background: #c3c3c3 !important;
+}
+.border-complete {
+  border-radius: 20px;
+  background: #1f4df2;
+}
+
+.filledCircle::after {
+  position: relative;
+  content: "";
+  background-image: url("../icons/done.svg");
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  display: inline-block;
+}
+.filledCirclefirst::before {
+  position: relative;
+  content: "";
+  background-image: url("../icons/filledCircle.svg") !important;
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  display: inline-block;
+  left: -10px;
+}
+.filledCircle::before {
+  position: relative;
+  content: "";
+  background-image: url("../icons/filledCircle.svg") !important;
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  display: inline-block;
+  left: -10px;
+}
+.emptyCircle::before {
+  position: relative;
+  content: "";
+  background-image: url("../icons/emptycircle.svg");
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  display: inline-block;
+  left: -10px;
+}
+.halfCirle::before {
+  position: relative;
+  content: "";
+  background-image: url("../icons/halffilledcircle.svg");
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  display: inline-block;
+  left: -10px;
+}
+.emptyCircle,
+.filledCirclefirst {
+  border-left: 2px solid #d9d9d9;
+}
+.filledCircle {
+  color: #1f4df2;
+  font-weight: 700;
+  border-left: 2px solid #1f4df2;
+}
+#countries {
+  color: rgba(0, 0, 0, 0.3);
+}
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd !important;
 }
