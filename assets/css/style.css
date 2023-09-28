@@ -112,26 +112,6 @@ video {
   display: inline-block;
 }
 
-.invalid {
-  color: #000;
-  font-family: Helvetica;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.invalid:before {
-  position: relative;
-  left: -4px;
-  top: 4px;
-  content: "";
-  background-image: url("../icons/false.svg");
-  width: 20px;
-  height: 20px;
-  background-size: cover;
-  display: inline-block;
-}
 .border-uncomplete {
   border-radius: 20px !important;
   background: #c3c3c3 !important;
@@ -228,4 +208,7 @@ video {
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
   background-color: #ffdddd !important;
+}
+.input.valid {
+  background-color: #e3f7ff !important;
 }

@@ -16,81 +16,579 @@
 
     <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
-  <section class="bg-white max-w-[489px] m-auto">
+  <section class="max-w-[1228px] mx-auto bg-white m-auto h-full">
     <div
-      class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
+      class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0"
     >
       <a
         href="./index.html"
-        class="flex flex-col items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+        class="flex flex-col items-center mt-10 mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
       >
         <img
           class="mr-2"
           src="./assets//images/soul_surf_logo_blue.svg"
           alt="logo"
         />
-        <span class="Helvetica font-normal text-xl mt-16 mb-7"
-          >Create a New School Profile</span
-        >
       </a>
 
-      <form class="w-full" action="#">
-        <div>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-            placeholder="Gmail"
-            required=""
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-            required=""
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            name="confirm-password"
-            id="confirm-password"
-            placeholder="Confirm Password"
-            class="w-full border-none mb-2 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-            required=""
-          />
-        </div>
-        <span class="Helvetica text-xs opacity-50 font-normal text-normal"
-          >By continuing, you accept our Terms of Use and confirm that you have
-          read our Privacy Policy.</span
+      <div class="flex flex-col mt-2">
+        <span
+          id="firstPageHeader"
+          class="Helvetica font-normal text-xl mt-16 mb-7"
+          >Create a New School Profile</span
         >
+        <span id="secPageHeader" class="hidden Helvetica font-normal text-xl"
+          >Let's start with the basics</span
+        >
+        <span
+          id="secPageHeader2"
+          class="hidden Helvetica text-base font-normal mt-2 mb-14 text-left opacity-50"
+          >Don't worry, just write your e-mail address to reset your
+          password.</span
+        >
+      </div>
 
-        <div>
-          <a
-            href="./RegisterSchoolAccountStep2.html"
-            type="submit"
-            class="w-full block text-white font-medium rounded-lg text-base Helvetica px-5 py-2.5 text-center bg-dark-blue mt-12"
+      <ol
+        id="topStepper"
+        class="flex hidden items-center justify-center w-[80%] xl:w-full h-full mb-14"
+      >
+        <li
+          class="stepper flex relative w-full items-center text-blue-600 dark:text-blue-500 after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block"
+        >
+          <span class="complete absolute -top-8 -left-10 text-xs lg:text-base"
+            >%0 Complete</span
           >
-            Create
-          </a>
+          <span class="flex items-center justify-center rounded-full shrink-0">
+            <img class="" src="./assets/icons/filledCircle.svg" />
+          </span>
+        </li>
+        <li
+          class="stepper flex w-full relative items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block"
+        >
+          <span
+            class="hidden complete absolute -top-8 -left-10 text-xs lg:text-base"
+            >%25 Complete</span
+          >
+          <span class="flex items-center justify-center rounded-full shrink-0">
+            <img class="emptyimg" src="./assets/icons/emptycircle.svg" />
+          </span>
+        </li>
+        <li
+          class="stepper flex w-full relative items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block"
+        >
+          <span
+            class="hidden complete absolute -top-8 -left-10 text-xs lg:text-base"
+            >%50 Complete</span
+          >
+          <span class="flex items-center justify-center rounded-full shrink-0">
+            <img class="emptyimg" src="./assets/icons/emptycircle.svg" />
+          </span>
+        </li>
+        <li
+          class="stepper flex w-full relative items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block"
+        >
+          <span
+            class="hidden complete absolute -top-8 -left-10 text-xs lg:text-base"
+            >%75 Complete</span
+          >
+          <span class="flex items-center justify-center rounded-full shrink-0">
+            <img class="emptyimg" src="./assets/icons/emptycircle.svg" />
+          </span>
+        </li>
+        <li class="stepper flex items-center relative">
+          <span
+            class="hidden complete absolute -top-8 -left-10 text-xs lg:text-base w-48"
+            >%100 Complete</span
+          >
+          <span class="flex items-center justify-center rounded-full shrink-0">
+            <img class="emptyimg" src="./assets/icons/emptycircle.svg" />
+          </span>
+        </li>
+      </ol>
 
-          <p
-            class="mt-5 text-center text-sm font-normal text-dark-blue Helvetica"
-          >
-            I Have Already School Account
-            <a
-              href="./LoginSchoolAccount.html"
-              class="font-bold Helvetica text-primary-600 hover:underline dark:text-primary-500"
-              >Login</a
+      <div class="flex w-full justify-center gap-4 md:gap-24 h-full">
+        <div id="leftStepper" class="hidden w-3/6 md:w-2/6">
+          <ol class="relative text-gray-500">
+            <li
+              class="h-[75px] text-xs flex md:text-sm Helvetica filledCirclefirst"
             >
-          </p>
+              Basic Informations
+            </li>
+            <li class="h-[75px] text-xs flex md:text-sm Helvetica emptyCircle">
+              School Details
+            </li>
+            <li class="h-[75px] text-xs flex md:text-sm Helvetica emptyCircle">
+              Experiences
+            </li>
+            <li class="h-[75px] text-xs flex md:text-sm Helvetica emptyCircle">
+              Images
+            </li>
+            <li class="text-xs h-[75px md:text-sm flex Helvetica emptyCircle">
+              Check
+            </li>
+          </ol>
         </div>
-      </form>
+        <div class="w-3/5 md:w-1/2 h-full">
+          <form id="regForm" action="#">
+            <!-- tab0 -->
+            <div id="firstPageForm" class="tab">
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                  placeholder="Gmail"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                  class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  name="confirm-password"
+                  id="confirm-password"
+                  placeholder="Confirm Password"
+                  class="w-full border-none mb-2 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                  required
+                />
+              </div>
+              <span class="Helvetica text-xs opacity-50 font-normal text-normal"
+                >By continuing, you accept our Terms of Use and confirm that you
+                have read our Privacy Policy.</span
+              >
+
+              <div>
+                <!-- <button
+                  type="button"
+                  onclick="nextPrev(1)"
+                  class="w-full block text-white font-medium rounded-lg text-base Helvetica px-5 py-2.5 text-center bg-dark-blue mt-12"
+                >
+                  Create
+                </button> -->
+
+                <p
+                  class="mt-5 text-center text-sm font-normal text-dark-blue Helvetica"
+                >
+                  I Have Already School Account
+                  <a
+                    href="./LoginSchoolAccount.html"
+                    class="font-bold Helvetica text-primary-600 hover:underline dark:text-primary-500"
+                    >Login</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <!-- tab1 -->
+              <div class="tab hidden">
+                <div>
+                  <label
+                    for="countries"
+                    class="block mb-2 text-sm font-xs text-gray-900 dark:text-white"
+                    >Write School Name?</label
+                  >
+                  <select
+                    id="countries"
+                    class="light-blue mb-5 border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  >
+                    <option selected required>Choose a country</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    for="officialname"
+                    class="block mb-2 text-sm font-xs text-gray-900 dark:text-white"
+                    >Official Name</label
+                  >
+                  <input
+                    type="text"
+                    name="lorem"
+                    id="lorem"
+                    placeholder="lorem"
+                    class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="phoneNumber"
+                    class="block mb-2 text-sm font-xs text-gray-900 dark:text-white"
+                    >Phone Number</label
+                  >
+                  <div class="flex gap-4">
+                    <select
+                      id="countries"
+                      class="light-blue mb-5 w-1/5 border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+                    >
+                      <option selected>Az (+994)</option>
+                      <option value="Ge">Ge (+995)</option>
+                      <option value="TR">Tr (+990)</option>
+                      <option value="CA">Ge (+992)</option>
+                      <option value="FR">Ge (+991)</option>
+                    </select>
+                    <input
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      placeholder="Phone"
+                      class="border-none mb-5 w-4/5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="message"
+                    class="block mb-2 text-sm font-xs text-gray-900 dark:text-white"
+                    >Tell us about yourself</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    class="block p-2.5 w-full text-sm text-gray-900 light-blue rounded-lg border-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Write your thoughts here..."
+                  ></textarea>
+                </div>
+                <span
+                  class="Helvetica text-xs opacity-50 font-normal text-normal"
+                  >Max 150 Character</span
+                >
+              </div>
+              <hr class="bottomLine my-10 hidden" />
+              <!-- tab2 -->
+              <div class="tab hidden">
+                <div>
+                  <label
+                    for="countries"
+                    class="block mb-2 text-sm font-xs text-gray-900 dark:text-white"
+                    >Your Location</label
+                  >
+                  <select
+                    id="countries"
+                    class="light-blue mb-5 border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  >
+                    <option selected>Choose a country</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    for="website"
+                    class="block mb-2 text-sm font-xs text-gray-900 dark:text-white"
+                    >Your Web Site
+                    <span class="text-xs font-normal opacity-50"
+                      >(Optional)</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    name="lorem"
+                    id="lorem"
+                    placeholder="www.website.com"
+                    class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="social"
+                    class="block mb-2 text-sm font-xs text-gray-900 dark:text-white"
+                    >Add Social Media Profiles
+                    <span class="text-xs font-normal opacity-50"
+                      >(Optional)</span
+                    ></label
+                  >
+                  <div class="flex flex-col gap-4">
+                    <div class="flex gap-4">
+                      <div class="p-2 light-blue">
+                        <img src="./assets/icons/youtube.svg" />
+                      </div>
+                      <input
+                        type="text"
+                        name="youtube"
+                        id="youtube"
+                        placeholder="Youtube.com"
+                        class="border-none w-full light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                      />
+                    </div>
+                    <div class="flex gap-4">
+                      <div class="p-2 light-blue">
+                        <img src="./assets/icons/instagram.svg" />
+                      </div>
+                      <input
+                        type="text"
+                        name="youtube"
+                        id="youtube"
+                        placeholder="Youtube.com"
+                        class="border-none w-full light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                      />
+                    </div>
+                    <div class="flex gap-4">
+                      <div class="p-2 light-blue">
+                        <img src="./assets/icons/facebook.svg" />
+                      </div>
+                      <input
+                        type="text"
+                        name="youtube"
+                        id="youtube"
+                        placeholder="Youtube.com"
+                        class="border-none w-full light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                      />
+                    </div>
+                    <div class="flex gap-4">
+                      <div class="p-2 light-blue">
+                        <img src="./assets/icons/tiktok.svg" />
+                      </div>
+                      <input
+                        type="text"
+                        name="youtube"
+                        id="youtube"
+                        placeholder="Youtube.com"
+                        class="border-none w-full light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="bottomLine my-10 hidden" />
+
+              <!-- tab3 -->
+              <!-- <div class="tab hidden"></div> -->
+              <!-- <hr class="bottomLine my-10 hidden" /> -->
+              <!-- tab4 -->
+              <div class="tab hidden">
+                <div class="flex flex-col items-center justify-center w-full">
+                  <label for="dropzone-file" class="">
+                    <div class="px-8 rounded-md border-2 py-6 light-blue">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <g opacity="0.3">
+                          <path
+                            d="M21 15V18H24V20H21V23H19V20H16V18H19V15H21ZM21.0082 3C21.556 3 22 3.44495 22 3.9934V13H20V5H4V18.999L14 9L17 12V14.829L14 11.8284L6.827 19H14V21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082ZM8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7Z"
+                            fill="#1F4DF2"
+                          />
+                        </g>
+                      </svg>
+                      <input id="dropzone-file" type="file" class="hidden" />
+                    </div>
+                  </label>
+                  <h1 class="text-xl Helvetica font-normal mt-8 mb-4">
+                    Add Images
+                  </h1>
+                  <p class="Helvetica text-xs opacity-50 mb-8">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <div class="grid grid-cols-2 gap-10 mb-10">
+                    <ol>
+                      <ul class="mb-6 text-xs Helvetica">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </ul>
+                      <ul class="text-xs Helvetica">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </ul>
+                    </ol>
+                    <div>
+                      <p class="mb-6 text-xs Helvetica">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </p>
+                      <p class="text-xs Helvetica">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- tab5 -->
+              <div class="tab hidden"></div>
+              <div class="flex gap-2 justify-end">
+                <button
+                  id="prevBtn"
+                  type="button"
+                  onclick="nextPrev(-1)"
+                  class="w-fit block text-black font-medium border rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-white mt-6"
+                >
+                  Back
+                </button>
+                <button
+                  id="nextBtn"
+                  type="button"
+                  onclick="nextPrev(1)"
+                  class="w-fit block text-white font-medium rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-dark-blue mt-6"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
+  <script>
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+
+    function showTab(n) {
+      // This function will display the specified tab of the form...
+      let x = document.getElementsByClassName("tab");
+      let bottomLine = document.getElementsByClassName("bottomLine");
+      let topStepper = document.getElementById("topStepper");
+      let leftStepper = document.getElementById("leftStepper");
+      let firstPageHeader = document.getElementById("firstPageHeader");
+      let secPageHeader = document.getElementById("secPageHeader");
+      let secPageHeader2 = document.getElementById("secPageHeader2");
+      let nextBtn = document.getElementById("nextBtn");
+
+      if (n === 1) {
+        topStepper.style.display = "flex";
+        leftStepper.style.display = "block";
+        firstPageHeader.style.display = "none";
+        secPageHeader.style.display = "block";
+        secPageHeader2.style.display = "block";
+      } else if (n === 0) {
+        topStepper.style.display = "none";
+        leftStepper.style.display = "none";
+        firstPageHeader.style.display = "block";
+        secPageHeader.style.display = "none";
+        secPageHeader2.style.display = "none";
+      }
+
+      x[n].style.display = "block";
+      //... and fix the Previous/Next buttons:
+      if (n < 1) {
+        document.getElementById("prevBtn").style.display = "none";
+      } else {
+        document.getElementById("prevBtn").style.display = "inline";
+      }
+
+      if (n == x.length - 1) {
+        for (var i = 1; i < x.length; i++) {
+          x[i].style.display = "block";
+        }
+        for (var i = 0; i < bottomLine.length; i++) {
+          bottomLine[i].style.display = "block";
+        }
+        nextBtn.innerHTML = "Complete";
+        nextBtn.classList.add("!w-fit");
+      } else if (n === 0) {
+        nextBtn.innerHTML = "Create";
+        nextBtn.classList.add("!w-full");
+      } else {
+        nextBtn.innerHTML = "Next";
+        nextBtn.classList.add("!w-fit");
+      }
+    }
+
+    function nextPrev(n) {
+      // This function will figure out which tab to display
+      let x = document.getElementsByClassName("tab");
+      let bottomLine = document.getElementsByClassName("bottomLine");
+
+      if (n <= -1) {
+        for (var i = 0; i < x.length; i++) {
+          if (i === currentTab) {
+            x[i].style.display = "block";
+          } else {
+            x[i].style.display = "none";
+          }
+        }
+        for (var i = 0; i < bottomLine.length; i++) {
+          bottomLine[i].style.display = "none";
+        }
+      }
+
+      // Exit the function if any field in the current tab is invalid:
+      if (n == 1 && !validateForm()) return false;
+      // Hide the current tab:
+      x[currentTab].style.display = "none";
+      // Increase or decrease the current tab by 1:
+      currentTab = currentTab + n;
+      // if you have reached the end of the form...
+      if (currentTab >= x.length) {
+        // ... the form gets submitted:
+        document.getElementById("regForm").submit();
+        return false;
+      }
+      // Otherwise, display the correct tab:
+      showTab(currentTab);
+    }
+
+    function validateForm() {
+      // This function deals with validation of the form fields
+      var x,
+        y,
+        i,
+        valid = true;
+      x = document.getElementsByClassName("tab");
+      input = x[currentTab].getElementsByTagName("input");
+      // A loop that checks every input field in the current tab:
+      for (i = 0; i < input.length; i++) {
+        // to solve image input error
+        if (i === 3) {
+          valid = true;
+        } else if (input[i].value == "" && input[i].required) {
+          // add an "invalid" class to the field:
+          input[i].className += " invalid";
+          // and set the current valid status to false
+          valid = false;
+        }
+      }
+      //   If the valid status is true, mark the step as finished and valid:
+      if (valid) {
+        if (document.getElementsByClassName("emptyCircle")[currentTab]) {
+          document.getElementsByClassName("emptyCircle")[
+            currentTab
+          ].className += " halfCirle";
+          document.querySelectorAll(".emptyimg")[currentTab].src =
+            "./assets/icons/halffilledcircle.svg";
+          document
+            .getElementsByClassName("complete")
+            [currentTab + 1].classList.add("!block");
+          document
+            .getElementsByClassName("complete")
+            [currentTab].classList.add("!hidden");
+        }
+
+        document.getElementsByClassName("filledCirclefirst")[0].className +=
+          " filledCircle";
+        // for top stepper
+        document.getElementsByClassName("stepper")[currentTab].classList +=
+          " after:border-blue-600";
+      }
+      if (currentTab !== 0 && valid) {
+        document.getElementsByClassName("halfCirle")[
+          currentTab - 1
+        ].className += " filledCircle";
+        // for top stepper
+        document.querySelectorAll(".emptyimg")[currentTab - 1].src =
+          "./assets/icons/filledCircle.svg";
+      }
+      return valid; // return the valid status
+    }
+  </script>
 </html>
