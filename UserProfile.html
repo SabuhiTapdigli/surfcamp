@@ -1,0 +1,800 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+  <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+<header>
+  <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+    <div
+      class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
+    >
+      <a href="https://flowbite.com" class="flex items-center">
+        <img
+          src="./assets/images/soulsurf_logo_black.svg"
+          class="mr-3 h-6 sm:h-9"
+          alt="Flowbite Logo"
+        />
+      </a>
+      <div class="flex items-center justify-center lg:order-3">
+        <!-- lang -->
+        <div class="flex">
+          <div
+            type="button"
+            data-modal-target="crypto-modal"
+            data-modal-toggle="crypto-modal"
+            class="text-black cursor-pointer font-medium text-sm text-center inline-flex items-center"
+          >
+            <div class="hidden lg:flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 mr-1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                />
+              </svg>
+
+              En
+              <span class="ml-2">USD</span>
+            </div>
+          </div>
+
+          <!-- Main modal -->
+          <div
+            id="crypto-modal"
+            tabindex="-1"
+            aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+          >
+            <div class="relative w-full max-w-6xl max-h-full">
+              <!-- Modal content -->
+              <div class="relative bg-white rounded-lg shadow">
+                <button
+                  type="button"
+                  class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                  data-modal-hide="crypto-modal"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+                <!-- Modal header -->
+                <div class="px-6 py-4 border-b rounded-t">
+                  <h3
+                    class="text-base font-semibold text-black lg:text-xl dark:text-black"
+                  >
+                    Change language & currency
+                  </h3>
+                </div>
+                <!-- Modal body -->
+                <div class="p-6">
+                  <div class="flex flex-wrap gap-4">
+                    <button
+                      type="button"
+                      class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 mr-2 mb-2"
+                    >
+                      <img class="mr-2" src="./assets/icons/en-flag.svg" />
+                      English
+                    </button>
+                    <button
+                      type="button"
+                      class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 mr-2 mb-2"
+                    >
+                      <img class="mr-2" src="./assets/icons/de-flag.svg" />
+                      Deutsch
+                    </button>
+                    <button
+                      type="button"
+                      class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 mr-2 mb-2"
+                    >
+                      <img class="mr-2" src="./assets/icons/nl-flag.svg" />
+                      Nederlands
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- end -->
+
+          <!-- <a
+            href="#"
+            class="hidden lg:block text-white bg-primary-700 hover:bg-primary-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+            >Register As School</a
+          >
+          <a
+            href="#"
+            class="hidden lg:flex justify-center items-center w-[142px] h-10 bg-sky-950 rounded-md w-11 text-white text-base font-bold"
+            >Log in</a
+          > -->
+          <div class="flex ml-10 justify-center items-center md:order-2">
+            <button
+              type="button"
+              class="flex mr-3 text-sm justify-center items-center rounded-full md:mr-0 focus:ring-gray-300 dark:focus:ring-gray-600"
+              id="user-menu-button"
+              aria-expanded="false"
+              data-dropdown-toggle="user-dropdown"
+              data-dropdown-placement="bottom"
+            >
+              <span class="sr-only">Open user menu</span>
+              <img
+                class="w-8 h-8 rounded-full mr-2"
+                src="./assets/icons/profile.jpeg"
+                alt="user photo"
+              />
+              Username
+              <svg
+                class="w-2.5 h-2.5 ml-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div
+              class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+              id="user-dropdown"
+            >
+              <div class="px-4 py-3">
+                <span class="block text-sm text-gray-900 dark:text-white"
+                  >Bonnie Green</span
+                >
+                <span
+                  class="block text-sm text-gray-500 truncate "
+                  >name@flowbite.com</span
+                >
+              </div>
+              <ul class="py-2" aria-labelledby="user-menu-button">
+                <li>
+                  <a
+                    href="#"
+                    class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="13"
+                      height="18"
+                      viewBox="0 0 13 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M0.166016 17.4167C0.166016 13.9189 3.00154 11.0834 6.49935 11.0834C9.99717 11.0834 12.8327 13.9189 12.8327 17.4167H11.2493C11.2493 14.7934 9.12269 12.6667 6.49935 12.6667C3.876 12.6667 1.74935 14.7934 1.74935 17.4167H0.166016ZM6.49935 10.2917C3.87497 10.2917 1.74935 8.16612 1.74935 5.54175C1.74935 2.91737 3.87497 0.791748 6.49935 0.791748C9.12372 0.791748 11.2493 2.91737 11.2493 5.54175C11.2493 8.16612 9.12372 10.2917 6.49935 10.2917ZM6.49935 8.70842C8.24893 8.70842 9.66602 7.29133 9.66602 5.54175C9.66602 3.79216 8.24893 2.37508 6.49935 2.37508C4.74977 2.37508 3.33268 3.79216 3.33268 5.54175C3.33268 7.29133 4.74977 8.70842 6.49935 8.70842Z"
+                        fill="black"
+                      />
+                    </svg>
+                    Profile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="19"
+                      viewBox="0 0 19 19"
+                      fill="none"
+                    >
+                      <path
+                        d="M7.91732 2.375H11.084C14.5818 2.375 17.4173 5.21053 17.4173 8.70833C17.4173 12.2062 14.5818 15.0417 11.084 15.0417V17.8125C7.12565 16.2292 1.58398 13.8542 1.58398 8.70833C1.58398 5.21053 4.41951 2.375 7.91732 2.375ZM9.50065 13.4583H11.084C13.7073 13.4583 15.834 11.3317 15.834 8.70833C15.834 6.08498 13.7073 3.95833 11.084 3.95833H7.91732C5.29396 3.95833 3.16732 6.08498 3.16732 8.70833C3.16732 11.5662 5.11646 13.4311 9.50065 15.4215V13.4583Z"
+                        fill="black"
+                      />
+                    </svg>
+                    Messages
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="19"
+                      viewBox="0 0 19 19"
+                      fill="none"
+                    >
+                      <path
+                        d="M2.64349 13.4586C2.3013 12.8659 2.04445 12.2473 1.86914 11.6171C2.63901 11.2243 3.1662 10.4238 3.1662 9.50026C3.1662 8.57741 2.6398 7.77743 1.87088 7.3843C2.22454 6.109 2.89612 4.92131 3.85101 3.95053C4.57614 4.42089 5.53299 4.47724 6.33287 4.01543C7.13274 3.55362 7.56236 2.69679 7.51758 1.83363C8.83578 1.49208 10.2001 1.5043 11.4814 1.83567C11.4374 2.69815 11.8669 3.55399 12.6662 4.01543C13.4661 4.47723 14.4229 4.42089 15.148 3.95057C15.6061 4.41749 16.0133 4.94921 16.3556 5.54193C16.6977 6.13465 16.9546 6.75321 17.1299 7.38341C16.36 7.77622 15.8328 8.5767 15.8328 9.50026C15.8328 10.4232 16.3592 11.2231 17.1282 11.6162C16.7745 12.8915 16.103 14.0792 15.1481 15.05C14.4229 14.5797 13.4661 14.5233 12.6662 14.9851C11.8663 15.4469 11.4367 16.3038 11.4815 17.1669C10.1633 17.5084 8.79897 17.4963 7.51768 17.1649C7.56168 16.3023 7.13211 15.4465 6.33287 14.9851C5.53301 14.5233 4.57621 14.5796 3.85109 15.0499C3.39297 14.583 2.9857 14.0513 2.64349 13.4586ZM7.12453 13.6139C7.98854 14.1127 8.60905 14.9014 8.90624 15.8064C9.30073 15.844 9.69783 15.8445 10.0924 15.8077C10.3894 14.9022 11.0101 14.113 11.8745 13.6139C12.7389 13.1148 13.7328 12.972 14.6655 13.1674C14.8946 12.8441 15.0927 12.4999 15.2575 12.1395C14.6223 11.4296 14.2495 10.4979 14.2495 9.50026C14.2495 8.5026 14.6223 7.57097 15.2575 6.86108C15.1751 6.68216 15.084 6.50619 14.9843 6.3336C14.8847 6.161 14.7778 5.99419 14.664 5.83343C13.7318 6.02845 12.7385 5.88546 11.8745 5.38664C11.0105 4.88781 10.3901 4.0991 10.0928 3.19412C9.69838 3.15659 9.3012 3.15605 8.90672 3.19283C8.6096 4.09833 7.98894 4.88757 7.12453 5.38664C6.2601 5.88572 5.26628 6.02859 4.33356 5.83312C4.10443 6.15643 3.90634 6.50061 3.74161 6.86098C4.37673 7.5709 4.74953 8.5026 4.74953 9.50026C4.74953 10.4979 4.37674 11.4296 3.74161 12.1394C3.82403 12.3184 3.91505 12.4943 4.01471 12.6669C4.11435 12.8395 4.22124 13.0063 4.33502 13.1671C5.26732 12.9721 6.26055 13.1151 7.12453 13.6139ZM9.49952 11.8753C8.18788 11.8753 7.12453 10.812 7.12453 9.50026C7.12453 8.18863 8.18788 7.12527 9.49952 7.12527C10.8112 7.12527 11.8745 8.18863 11.8745 9.50026C11.8745 10.812 10.8112 11.8753 9.49952 11.8753ZM9.49952 10.2919C9.93675 10.2919 10.2912 9.9375 10.2912 9.50026C10.2912 9.06302 9.93675 8.70859 9.49952 8.70859C9.06228 8.70859 8.70785 9.06302 8.70785 9.50026C8.70785 9.9375 9.06228 10.2919 9.49952 10.2919Z"
+                        fill="black"
+                      />
+                    </svg>
+                    Settings
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="19"
+                      viewBox="0 0 19 19"
+                      fill="none"
+                    >
+                      <path
+                        d="M15.834 13.4583H17.4173V15.0416H1.58398V13.4583H3.16732V7.91659C3.16732 4.41878 6.00285 1.58325 9.50065 1.58325C12.9985 1.58325 15.834 4.41878 15.834 7.91659V13.4583ZM14.2507 13.4583V7.91659C14.2507 5.29323 12.124 3.16659 9.50065 3.16659C6.8773 3.16659 4.75065 5.29323 4.75065 7.91659V13.4583H14.2507ZM7.12565 16.6249H11.8757V18.2083H7.12565V16.6249Z"
+                        fill="black"
+                      />
+                    </svg>
+                    Notifications
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="19"
+                      height="19"
+                      viewBox="0 0 19 19"
+                      class="fill-re text-#91112B"
+                    >
+                      <path
+                        fill="black"
+                        d="M9.50065 17.4166C5.12839 17.4166 1.58398 13.8721 1.58398 9.49992C1.58398 5.12766 5.12839 1.58325 9.50065 1.58325C12.0904 1.58325 14.3897 2.82679 15.8341 4.74931L13.6893 4.74937C12.5729 3.76429 11.1065 3.16659 9.50065 3.16659C6.00285 3.16659 3.16732 6.00211 3.16732 9.49992C3.16732 12.9977 6.00285 15.8333 9.50065 15.8333C11.1069 15.8333 12.5736 15.2352 13.6901 14.2498H15.8347C14.3904 16.1727 12.0907 17.4166 9.50065 17.4166ZM15.0423 12.6666V10.2916H8.70898V8.70825H15.0423V6.33325L19.0007 9.49992L15.0423 12.6666Z"
+                      />
+                    </svg>
+                    <span>Log out</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button
+          data-collapse-toggle="mobile-menu-2"
+          type="button"
+          class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="mobile-menu-2"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <svg
+            class="hidden w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <form class="flex order-2 mb-0 hidden lg:block">
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pointer-events-none"
+          >
+            <svg
+              class="w-4 h-4 text-gray-500"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+          <input
+            type="search"
+            id="default-search"
+            class="w-full pl-6 text-sm text-gray-900 border-b-2 border-x-0 border-t-0 border-gray-300 focus:ring-0 hover:border-b-blue-500"
+            placeholder="Search"
+            required
+          />
+        </div>
+      </form>
+      <div
+        class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+        id="mobile-menu-2"
+      >
+        <ul
+          class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+        >
+          <li>
+            <a
+              href="#"
+              class="text-black text-base font-normal"
+              aria-current="page"
+              >Surfs</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-black text-base font-normal">Yoga</a>
+          </li>
+          <li>
+            <a href="#" class="text-black text-base font-normal">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="text-black text-base font-normal">FAQ</a>
+          </li>
+        </ul>
+        <div class="flex lg:hidden">
+          <div
+            type="button"
+            data-modal-target="crypto-modal"
+            data-modal-toggle="crypto-modal"
+            class="text-black cursor-pointer font-medium text-sm text-center inline-flex items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6 mr-1"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+              />
+            </svg>
+
+            En
+            <span class="ml-2">USD</span>
+          </div>
+
+          <!-- <a
+            href="#"
+            class="text-white bg-primary-700 hover:bg-primary-800 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+            >Register As School</a
+          >
+          <a
+            href="#"
+            class="flex justify-center items-center w-[142px] h-10 bg-sky-950 rounded-md w-11 text-white text-base font-bold"
+            >Log in</a
+          > -->
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<body style="background-color: #fcfcff">
+  <div class="mx-auto max-w-screen-xl mt-40 flex gap-20">
+    <div class="w-[270px] bg-white rounded-md">
+      <div class="flex flex-col items-center justify-center relative pt-12">
+        <div
+          class="rounded-full bg-dark-blue h-[93px] w-[93px] absolute -top-[51px]"
+        >
+          <img
+            class="h-full w-full object-cover rounded-full"
+            src="./assets/icons/profile.jpeg"
+          />
+        </div>
+
+        <h1 class="Helvetica text-base font-bold">Name Surname</h1>
+        <p class="Helvetica text-xs font-normal opacity-50">
+          Example@gmail.com
+        </p>
+      </div>
+      
+      <ul
+        class="py-2 mt-6 flex flex-col gap-4"
+        id="myTab" data-tabs-toggle="#myTabContent" role="tablist"
+      >
+        <li class="ml-4" role="presentation">
+          <button
+            class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="18"
+              viewBox="0 0 13 18"
+              fill="none"
+            >
+              <path
+                d="M0.166016 17.4167C0.166016 13.9189 3.00154 11.0834 6.49935 11.0834C9.99717 11.0834 12.8327 13.9189 12.8327 17.4167H11.2493C11.2493 14.7934 9.12269 12.6667 6.49935 12.6667C3.876 12.6667 1.74935 14.7934 1.74935 17.4167H0.166016ZM6.49935 10.2917C3.87497 10.2917 1.74935 8.16612 1.74935 5.54175C1.74935 2.91737 3.87497 0.791748 6.49935 0.791748C9.12372 0.791748 11.2493 2.91737 11.2493 5.54175C11.2493 8.16612 9.12372 10.2917 6.49935 10.2917ZM6.49935 8.70842C8.24893 8.70842 9.66602 7.29133 9.66602 5.54175C9.66602 3.79216 8.24893 2.37508 6.49935 2.37508C4.74977 2.37508 3.33268 3.79216 3.33268 5.54175C3.33268 7.29133 4.74977 8.70842 6.49935 8.70842Z"
+                fill="black"
+              />
+            </svg>
+            Profile</button
+          >
+        </li>
+        <li class="ml-4" role="presentation">
+          <button
+       
+            class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            id="message-tab" data-tabs-target="#message" type="button" role="tab" aria-controls="message" aria-selected="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+            >
+              <path
+                d="M7.91732 2.375H11.084C14.5818 2.375 17.4173 5.21053 17.4173 8.70833C17.4173 12.2062 14.5818 15.0417 11.084 15.0417V17.8125C7.12565 16.2292 1.58398 13.8542 1.58398 8.70833C1.58398 5.21053 4.41951 2.375 7.91732 2.375ZM9.50065 13.4583H11.084C13.7073 13.4583 15.834 11.3317 15.834 8.70833C15.834 6.08498 13.7073 3.95833 11.084 3.95833H7.91732C5.29396 3.95833 3.16732 6.08498 3.16732 8.70833C3.16732 11.5662 5.11646 13.4311 9.50065 15.4215V13.4583Z"
+                fill="black"
+              />
+            </svg>
+            Messages
+          </a>
+        </li>
+        <li class="ml-4" role="presentation">
+          <button
+            class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+            >
+              <path
+                d="M2.64349 13.4586C2.3013 12.8659 2.04445 12.2473 1.86914 11.6171C2.63901 11.2243 3.1662 10.4238 3.1662 9.50026C3.1662 8.57741 2.6398 7.77743 1.87088 7.3843C2.22454 6.109 2.89612 4.92131 3.85101 3.95053C4.57614 4.42089 5.53299 4.47724 6.33287 4.01543C7.13274 3.55362 7.56236 2.69679 7.51758 1.83363C8.83578 1.49208 10.2001 1.5043 11.4814 1.83567C11.4374 2.69815 11.8669 3.55399 12.6662 4.01543C13.4661 4.47723 14.4229 4.42089 15.148 3.95057C15.6061 4.41749 16.0133 4.94921 16.3556 5.54193C16.6977 6.13465 16.9546 6.75321 17.1299 7.38341C16.36 7.77622 15.8328 8.5767 15.8328 9.50026C15.8328 10.4232 16.3592 11.2231 17.1282 11.6162C16.7745 12.8915 16.103 14.0792 15.1481 15.05C14.4229 14.5797 13.4661 14.5233 12.6662 14.9851C11.8663 15.4469 11.4367 16.3038 11.4815 17.1669C10.1633 17.5084 8.79897 17.4963 7.51768 17.1649C7.56168 16.3023 7.13211 15.4465 6.33287 14.9851C5.53301 14.5233 4.57621 14.5796 3.85109 15.0499C3.39297 14.583 2.9857 14.0513 2.64349 13.4586ZM7.12453 13.6139C7.98854 14.1127 8.60905 14.9014 8.90624 15.8064C9.30073 15.844 9.69783 15.8445 10.0924 15.8077C10.3894 14.9022 11.0101 14.113 11.8745 13.6139C12.7389 13.1148 13.7328 12.972 14.6655 13.1674C14.8946 12.8441 15.0927 12.4999 15.2575 12.1395C14.6223 11.4296 14.2495 10.4979 14.2495 9.50026C14.2495 8.5026 14.6223 7.57097 15.2575 6.86108C15.1751 6.68216 15.084 6.50619 14.9843 6.3336C14.8847 6.161 14.7778 5.99419 14.664 5.83343C13.7318 6.02845 12.7385 5.88546 11.8745 5.38664C11.0105 4.88781 10.3901 4.0991 10.0928 3.19412C9.69838 3.15659 9.3012 3.15605 8.90672 3.19283C8.6096 4.09833 7.98894 4.88757 7.12453 5.38664C6.2601 5.88572 5.26628 6.02859 4.33356 5.83312C4.10443 6.15643 3.90634 6.50061 3.74161 6.86098C4.37673 7.5709 4.74953 8.5026 4.74953 9.50026C4.74953 10.4979 4.37674 11.4296 3.74161 12.1394C3.82403 12.3184 3.91505 12.4943 4.01471 12.6669C4.11435 12.8395 4.22124 13.0063 4.33502 13.1671C5.26732 12.9721 6.26055 13.1151 7.12453 13.6139ZM9.49952 11.8753C8.18788 11.8753 7.12453 10.812 7.12453 9.50026C7.12453 8.18863 8.18788 7.12527 9.49952 7.12527C10.8112 7.12527 11.8745 8.18863 11.8745 9.50026C11.8745 10.812 10.8112 11.8753 9.49952 11.8753ZM9.49952 10.2919C9.93675 10.2919 10.2912 9.9375 10.2912 9.50026C10.2912 9.06302 9.93675 8.70859 9.49952 8.70859C9.06228 8.70859 8.70785 9.06302 8.70785 9.50026C8.70785 9.9375 9.06228 10.2919 9.49952 10.2919Z"
+                fill="black"
+              />
+            </svg>
+            Settings
+          </button>
+        </li>
+        <li class="ml-4" role="presentation">
+          <button
+            class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            id="connotificationtacts-tab" data-tabs-target="#notification" type="button" role="tab" aria-controls="notification" aria-selected="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+            >
+              <path
+                d="M15.834 13.4583H17.4173V15.0416H1.58398V13.4583H3.16732V7.91659C3.16732 4.41878 6.00285 1.58325 9.50065 1.58325C12.9985 1.58325 15.834 4.41878 15.834 7.91659V13.4583ZM14.2507 13.4583V7.91659C14.2507 5.29323 12.124 3.16659 9.50065 3.16659C6.8773 3.16659 4.75065 5.29323 4.75065 7.91659V13.4583H14.2507ZM7.12565 16.6249H11.8757V18.2083H7.12565V16.6249Z"
+                fill="black"
+              />
+            </svg>
+            Notifications
+          </button>
+        </li>
+        <li class="ml-4" role="presentation">
+          <button
+            class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            id="logout-tab" data-tabs-target="#logout" type="button" role="tab" aria-controls="logout" aria-selected="false"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              class="fill-re text-#91112B"
+            >
+              <path
+                fill="black"
+                d="M9.50065 17.4166C5.12839 17.4166 1.58398 13.8721 1.58398 9.49992C1.58398 5.12766 5.12839 1.58325 9.50065 1.58325C12.0904 1.58325 14.3897 2.82679 15.8341 4.74931L13.6893 4.74937C12.5729 3.76429 11.1065 3.16659 9.50065 3.16659C6.00285 3.16659 3.16732 6.00211 3.16732 9.49992C3.16732 12.9977 6.00285 15.8333 9.50065 15.8333C11.1069 15.8333 12.5736 15.2352 13.6901 14.2498H15.8347C14.3904 16.1727 12.0907 17.4166 9.50065 17.4166ZM15.0423 12.6666V10.2916H8.70898V8.70825H15.0423V6.33325L19.0007 9.49992L15.0423 12.6666Z"
+              />
+            </svg>
+            <span>Log out</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div id="myTabContent">
+        <div class="hidden p-4 rounded-lg " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <h1 class="text-2xl Halvetica font-bold">Profile</h1>
+            <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab2" data-tabs-toggle="#myTabContent2" role="tablist2">
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 rounded-t-lg" id="events-tab" data-tabs-target="#events" type="button" role="tab" aria-controls="events" aria-selected="false">Events</button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="liked-tab" data-tabs-target="#liked" type="button" role="tab" aria-controls="liked" aria-selected="false">Liked</button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="cancelled-tab" data-tabs-target="#cancelled" type="button" role="tab" aria-controls="cancelled" aria-selected="false">Cancelled</button>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div id="myTabContent2">
+                <div class="hidden p-4 rounded-lg " id="events" role="tabpanel" aria-labelledby="events-tab">
+                    <p class="text-sm text-gray-500 ">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+                <div class="hidden p-4 rounded-lg " id="liked" role="tabpanel" aria-labelledby="liked-tab">
+                    <p class="text-sm text-gray-500 ">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+                <div class="hidden p-4 rounded-lg " id="cancelled" role="tabpanel" aria-labelledby="cancelled-tab">
+                    <p class="text-sm text-gray-500 ">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                </div>
+              
+            </div>
+            
+        </div>
+        <div class="hidden p-4 rounded-lg " id="message" role="tabpanel" aria-labelledby="message-tab">
+            <p class="text-sm text-gray-500 ">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+        </div>
+        <div class="hidden p-4 rounded-lg " id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            <p class="text-sm text-gray-500 ">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+        </div>
+        <div class="hidden p-4 rounded-lg " id="notification" role="tabpanel" aria-labelledby="notification-tab">
+            <p class="text-sm text-gray-500 ">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+        </div>
+        <div class="hidden p-4 rounded-lg " id="logout" role="tabpanel" aria-labelledby="logout-tab">
+            <p class="text-sm text-gray-500 ">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+        </div>
+    </div>
+  </div>
+</body>
+<footer class="bg-dark-blue">
+  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div class="mb-6 md:mb-0 flex justify-center items-center">
+      <a href="https://flowbite.com/" class="flex items-center">
+        <img
+          src="./assets//footer-logo.svg"
+          class="h-8 mr-3 w-[269px] h-[99px] mb-10"
+          alt="FlowBite Logo"
+        />
+      </a>
+    </div>
+    <div class="flex items-center justify-center mb-10">
+      <div class="flex items-center">
+        <svg
+          class="w-3 h-3 text-yellow-500 mr-1"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-3 h-3 text-yellow-500 mr-1"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-3 h-3 text-yellow-500 mr-1"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-3 h-3 text-yellow-500 mr-1"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <svg
+          class="w-3 h-3 text-yellow-500 mr-1"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 22 20"
+        >
+          <path
+            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+          />
+        </svg>
+        <p class="ml-2 text-xs LucidaGrande font-medium text-white">
+          4.95 rating
+        </p>
+        <span class="ml-2 text-xs LucidaGrande font-medium text-white"
+          >124.131 Reviews</span
+        >
+      </div>
+    </div>
+    <p class="text-2xl text-white font-normal text-center mb-10 LucidaGrande">
+      Subscribe to be notified of new activities immediately
+    </p>
+    <form class="max-w-[705px] m-auto h-[44px] mb-12">
+      <label
+        for="default-search"
+        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        >Search</label
+      >
+      <div class="relative">
+        <div
+          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+        ></div>
+        <input
+          type="search"
+          id="default-search"
+          class="block w-full p-4 pl-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 bg-white text-black dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Search Mockups, Logos..."
+          required
+        />
+        <button
+          type="submit"
+          class="text-white absolute right-2.5 bottom-2.5 bg-dark-blue hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Subscribe
+        </button>
+      </div>
+    </form>
+    <div class="flex justify-center items-center">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-14 lg:gap-44 mt-10">
+        <div>
+          <ul class="text-gray-500  font-medium">
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://flowbite.com/" class="hover:underline">Surf</a>
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >About Us</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline">FAQ</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-gray-500  font-medium">
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Contact Us</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Help Center</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >About SoulSurf</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Log In</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-gray-500  font-medium">
+            <!-- <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Register As School</a
+              >
+            </li> -->
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Cookies Settings</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Terms & Conditions</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Privacy And Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="text-gray-500  font-medium">
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Tailwind CSS</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Tailwind CSS</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Tailwind CSS</a
+              >
+            </li>
+            <li class="mb-10 text-sm text-white Helvetica">
+              <a href="https://tailwindcss.com/" class="hover:underline"
+                >Tailwind CSS</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+    <div class="flex justify-center items-center">
+      <span class="text-sm text-gray-500 sm:text-center "
+        >© 2023
+        <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>.
+        All Rights Reserved.
+      </span>
+    </div>
+  </div>
+
+</footer>
