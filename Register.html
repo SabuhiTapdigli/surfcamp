@@ -32,7 +32,7 @@
         <span class="Helvetica font-normal text-xl mt-6 mb-6">Register</span>
       </a>
 
-      <form class="w-full" action="#">
+      <form id="registerForm" class="w-full" action="#">
         <div class="flex flex-wrap gap-4">
           <input
             type="name"
@@ -69,6 +69,7 @@
             placeholder="Password"
             class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
             required=""
+            onkeyup="checkPassword()"
           />
         </div>
         <div>
@@ -79,6 +80,7 @@
             placeholder="Confirm Password"
             class="w-full border-none mb-2 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
             required=""
+            onkeyup="checkPassword()"
           />
         </div>
         <p class="Helvetica text-xs font-normal leading-normal opacity-50">
@@ -122,7 +124,8 @@
         </div>
         <div>
           <button
-            type="submit"
+            id="submitButton"
+            type="button"
             class="w-full text-white font-medium rounded-lg text-base Helvetica px-5 py-2.5 text-center bg-dark-blue"
           >
             Continue
@@ -148,17 +151,25 @@
     </div>
   </section>
   <script>
-    var myInput = document.getElementById("password");
+    var password = document.getElementById("password");
+    var confirmpassword = document.getElementById("confirm-password");
     var length = document.getElementById("length");
     var number = document.getElementById("number");
     var uppercase = document.getElementById("uppercase");
     var lowercase = document.getElementById("lowercase");
+    var submitButton = document.getElementById("submitButton");
 
-    // When the user starts to type something inside the password field
-    myInput.onkeyup = function () {
-      // Validate lowercase letters
-      var lowerCaseLetters = /[a-z]/g;
-      if (myInput.value.match(lowerCaseLetters)) {
+    function checkPassword() {
+      const upperCaseLetters = /[A-Z]/g;
+      const lowerCaseLetters = /[a-z]/g;
+      const numbers = /[0-9]/g;
+      const isLowerCase = password.value.match(lowerCaseLetters);
+      const isUpperCase = password.value.match(upperCaseLetters);
+      const isLength = password.value.length >= 8;
+      const isNumber = password.value.match(numbers);
+      const doPasswordsMatch = password.value === confirmpassword.value;
+
+      if (isLowerCase) {
         lowercase.classList.remove("invalid");
         lowercase.classList.add("valid");
       } else {
@@ -166,9 +177,7 @@
         lowercase.classList.add("invalid");
       }
 
-      // Validate capital letters
-      var upperCaseLetters = /[A-Z]/g;
-      if (myInput.value.match(upperCaseLetters)) {
+      if (isUpperCase) {
         uppercase.classList.remove("invalid");
         uppercase.classList.add("valid");
       } else {
@@ -176,9 +185,7 @@
         uppercase.classList.add("invalid");
       }
 
-      // Validate numbers
-      var numbers = /[0-9]/g;
-      if (myInput.value.match(numbers)) {
+      if (isNumber) {
         number.classList.remove("invalid");
         number.classList.add("valid");
       } else {
@@ -186,14 +193,32 @@
         number.classList.add("invalid");
       }
 
-      // Validate length
-      if (myInput.value.length >= 8) {
+      if (isLength) {
         length.classList.remove("invalid");
         length.classList.add("valid");
       } else {
         length.classList.remove("valid");
         length.classList.add("invalid");
       }
-    };
+      if (
+        isNumber &&
+        doPasswordsMatch &&
+        isLength &&
+        isUpperCase &&
+        isLowerCase
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    submitButton.addEventListener("click", function (event) {
+      if (checkPassword()) {
+        submitButton.setAttribute("type", "submit");
+      } else {
+        event.preventDefault();
+        alert("Fill all fields");
+      }
+    });
   </script>
 </html>
