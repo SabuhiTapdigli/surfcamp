@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/swiper.css" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            borderColor: {
+              "dark-red": "#91112b",
+              "dark-blue": "#062645",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <header>
+    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+      <div
+        class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
+      >
+        <a href="./index.html" class="flex items-center">
+          <img
+            src="./assets/images/soulsurf_logo_black.svg"
+            class="mr-3 h-6 sm:h-9"
+            alt="Flowbite Logo"
+          />
+        </a>
+        <div class="flex items-center justify-center lg:order-3">
+          <!-- lang -->
+          <div class="flex">
+            <div
+              type="button"
+              data-modal-target="crypto-modal"
+              data-modal-toggle="crypto-modal"
+              class="text-black cursor-pointer font-medium text-sm text-center inline-flex items-center"
+            >
+              <div class="hidden lg:flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 mr-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                  />
+                </svg>
+
+                En
+                <span class="ml-2">USD</span>
+              </div>
+            </div>
+
+            <!-- Main modal -->
+            <div
+              id="crypto-modal"
+              tabindex="-1"
+              aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            >
+              <div class="relative w-full max-w-6xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow">
+                  <button
+                    type="button"
+                    class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                    data-modal-hide="crypto-modal"
+                  >
+                    <svg
+                      class="w-3 h-3"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 14"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                      />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                  </button>
+                  <!-- Modal header -->
+                  <div class="px-6 py-4 border-b rounded-t">
+                    <h3 class="text-base font-semibold text-black lg:text-xl">
+                      Change language & currency
+                    </h3>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6">
+                    <div class="flex flex-wrap gap-4">
+                      <button
+                        type="button"
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2"
+                      >
+                        <img class="mr-2" src="./assets/icons/en-flag.svg" />
+                        English
+                      </button>
+                      <button
+                        type="button"
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2"
+                      >
+                        <img class="mr-2" src="./assets/icons/de-flag.svg" />
+                        Deutsch
+                      </button>
+                      <button
+                        type="button"
+                        class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2"
+                      >
+                        <img class="mr-2" src="./assets/icons/nl-flag.svg" />
+                        Nederlands
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex ml-10 justify-center items-center md:order-2">
+              <button
+                type="button"
+                class="flex mr-3 text-sm justify-center items-center rounded-full md:mr-0 focus:ring-gray-300"
+                id="user-menu-button"
+                aria-expanded="false"
+                data-dropdown-toggle="user-dropdown"
+                data-dropdown-placement="bottom"
+              >
+                <span class="sr-only">Open user menu</span>
+                <img
+                  class="w-8 h-8 rounded-full mr-2"
+                  src="./assets/icons/profile.jpeg"
+                  alt="user photo"
+                />
+                Username
+                <svg
+                  class="w-2.5 h-2.5 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+
+              <!-- Dropdown menu -->
+              <div
+                class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow"
+                id="user-dropdown"
+              >
+                <div class="px-4 py-3">
+                  <span class="block text-sm text-gray-900">Bonnie Green</span>
+                  <span class="block text-sm text-gray-500 truncate"
+                    >name@flowbite.com</span
+                  >
+                </div>
+                <ul class="py-2" aria-labelledby="user-menu-button">
+                  <li>
+                    <a
+                      href="#"
+                      class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                      >
+                        <g opacity="0.5">
+                          <path
+                            d="M3.16602 17.4165C3.16602 13.9187 6.00154 11.0832 9.49935 11.0832C12.9972 11.0832 15.8327 13.9187 15.8327 17.4165H14.2493C14.2493 14.7932 12.1227 12.6665 9.49935 12.6665C6.876 12.6665 4.74935 14.7932 4.74935 17.4165H3.16602ZM9.49935 10.2915C6.87497 10.2915 4.74935 8.16588 4.74935 5.5415C4.74935 2.91713 6.87497 0.791504 9.49935 0.791504C12.1237 0.791504 14.2493 2.91713 14.2493 5.5415C14.2493 8.16588 12.1237 10.2915 9.49935 10.2915ZM9.49935 8.70817C11.2489 8.70817 12.666 7.29109 12.666 5.5415C12.666 3.79192 11.2489 2.37484 9.49935 2.37484C7.74977 2.37484 6.33268 3.79192 6.33268 5.5415C6.33268 7.29109 7.74977 8.70817 9.49935 8.70817Z"
+                            fill="black"
+                          />
+                        </g>
+                      </svg>
+                      Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                      >
+                        <path
+                          d="M7.91732 2.375H11.084C14.5818 2.375 17.4173 5.21053 17.4173 8.70833C17.4173 12.2062 14.5818 15.0417 11.084 15.0417V17.8125C7.12565 16.2292 1.58398 13.8542 1.58398 8.70833C1.58398 5.21053 4.41951 2.375 7.91732 2.375ZM9.50065 13.4583H11.084C13.7073 13.4583 15.834 11.3317 15.834 8.70833C15.834 6.08498 13.7073 3.95833 11.084 3.95833H7.91732C5.29396 3.95833 3.16732 6.08498 3.16732 8.70833C3.16732 11.5662 5.11646 13.4311 9.50065 15.4215V13.4583Z"
+                          fill="black"
+                        />
+                      </svg>
+                      Messages
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                      >
+                        <path
+                          d="M2.64349 13.4586C2.3013 12.8659 2.04445 12.2473 1.86914 11.6171C2.63901 11.2243 3.1662 10.4238 3.1662 9.50026C3.1662 8.57741 2.6398 7.77743 1.87088 7.3843C2.22454 6.109 2.89612 4.92131 3.85101 3.95053C4.57614 4.42089 5.53299 4.47724 6.33287 4.01543C7.13274 3.55362 7.56236 2.69679 7.51758 1.83363C8.83578 1.49208 10.2001 1.5043 11.4814 1.83567C11.4374 2.69815 11.8669 3.55399 12.6662 4.01543C13.4661 4.47723 14.4229 4.42089 15.148 3.95057C15.6061 4.41749 16.0133 4.94921 16.3556 5.54193C16.6977 6.13465 16.9546 6.75321 17.1299 7.38341C16.36 7.77622 15.8328 8.5767 15.8328 9.50026C15.8328 10.4232 16.3592 11.2231 17.1282 11.6162C16.7745 12.8915 16.103 14.0792 15.1481 15.05C14.4229 14.5797 13.4661 14.5233 12.6662 14.9851C11.8663 15.4469 11.4367 16.3038 11.4815 17.1669C10.1633 17.5084 8.79897 17.4963 7.51768 17.1649C7.56168 16.3023 7.13211 15.4465 6.33287 14.9851C5.53301 14.5233 4.57621 14.5796 3.85109 15.0499C3.39297 14.583 2.9857 14.0513 2.64349 13.4586ZM7.12453 13.6139C7.98854 14.1127 8.60905 14.9014 8.90624 15.8064C9.30073 15.844 9.69783 15.8445 10.0924 15.8077C10.3894 14.9022 11.0101 14.113 11.8745 13.6139C12.7389 13.1148 13.7328 12.972 14.6655 13.1674C14.8946 12.8441 15.0927 12.4999 15.2575 12.1395C14.6223 11.4296 14.2495 10.4979 14.2495 9.50026C14.2495 8.5026 14.6223 7.57097 15.2575 6.86108C15.1751 6.68216 15.084 6.50619 14.9843 6.3336C14.8847 6.161 14.7778 5.99419 14.664 5.83343C13.7318 6.02845 12.7385 5.88546 11.8745 5.38664C11.0105 4.88781 10.3901 4.0991 10.0928 3.19412C9.69838 3.15659 9.3012 3.15605 8.90672 3.19283C8.6096 4.09833 7.98894 4.88757 7.12453 5.38664C6.2601 5.88572 5.26628 6.02859 4.33356 5.83312C4.10443 6.15643 3.90634 6.50061 3.74161 6.86098C4.37673 7.5709 4.74953 8.5026 4.74953 9.50026C4.74953 10.4979 4.37674 11.4296 3.74161 12.1394C3.82403 12.3184 3.91505 12.4943 4.01471 12.6669C4.11435 12.8395 4.22124 13.0063 4.33502 13.1671C5.26732 12.9721 6.26055 13.1151 7.12453 13.6139ZM9.49952 11.8753C8.18788 11.8753 7.12453 10.812 7.12453 9.50026C7.12453 8.18863 8.18788 7.12527 9.49952 7.12527C10.8112 7.12527 11.8745 8.18863 11.8745 9.50026C11.8745 10.812 10.8112 11.8753 9.49952 11.8753ZM9.49952 10.2919C9.93675 10.2919 10.2912 9.9375 10.2912 9.50026C10.2912 9.06302 9.93675 8.70859 9.49952 8.70859C9.06228 8.70859 8.70785 9.06302 8.70785 9.50026C8.70785 9.9375 9.06228 10.2919 9.49952 10.2919Z"
+                          fill="black"
+                        />
+                      </svg>
+                      Settings
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                      >
+                        <path
+                          d="M15.834 13.4583H17.4173V15.0416H1.58398V13.4583H3.16732V7.91659C3.16732 4.41878 6.00285 1.58325 9.50065 1.58325C12.9985 1.58325 15.834 4.41878 15.834 7.91659V13.4583ZM14.2507 13.4583V7.91659C14.2507 5.29323 12.124 3.16659 9.50065 3.16659C6.8773 3.16659 4.75065 5.29323 4.75065 7.91659V13.4583H14.2507ZM7.12565 16.6249H11.8757V18.2083H7.12565V16.6249Z"
+                          fill="black"
+                        />
+                      </svg>
+                      Notifications
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        class="fill-re text-#91112B"
+                      >
+                        <path
+                          fill="black"
+                          d="M9.50065 17.4166C5.12839 17.4166 1.58398 13.8721 1.58398 9.49992C1.58398 5.12766 5.12839 1.58325 9.50065 1.58325C12.0904 1.58325 14.3897 2.82679 15.8341 4.74931L13.6893 4.74937C12.5729 3.76429 11.1065 3.16659 9.50065 3.16659C6.00285 3.16659 3.16732 6.00211 3.16732 9.49992C3.16732 12.9977 6.00285 15.8333 9.50065 15.8333C11.1069 15.8333 12.5736 15.2352 13.6901 14.2498H15.8347C14.3904 16.1727 12.0907 17.4166 9.50065 17.4166ZM15.0423 12.6666V10.2916H8.70898V8.70825H15.0423V6.33325L19.0007 9.49992L15.0423 12.6666Z"
+                        />
+                      </svg>
+                      <span>Log out</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button
+            data-collapse-toggle="mobile-menu-2"
+            type="button"
+            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="mobile-menu-2"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              class="hidden w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <form class="flex order-2 mb-0 hidden lg:block">
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 left-0 flex items-center pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="default-search"
+              class="w-full pl-6 text-sm text-gray-900 border-b-2 border-x-0 border-t-0 border-gray-300 focus:ring-0 hover:border-b-blue-500"
+              placeholder="Search"
+              required
+            />
+          </div>
+        </form>
+        <div
+          class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+          id="mobile-menu-2"
+        >
+          <ul
+            class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+          >
+            <li>
+              <a
+                href="#"
+                class="text-black text-base font-normal"
+                aria-current="page"
+                >Surfs</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-black text-base font-normal">Yoga</a>
+            </li>
+            <li>
+              <a href="#" class="text-black text-base font-normal">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="text-black text-base font-normal">FAQ</a>
+            </li>
+          </ul>
+          <div class="flex lg:hidden">
+            <div
+              type="button"
+              data-modal-target="crypto-modal"
+              data-modal-toggle="crypto-modal"
+              class="text-black cursor-pointer font-medium text-sm text-center inline-flex items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 mr-1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                />
+              </svg>
+
+              En
+              <span class="ml-2">USD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="max-w-screen-xl mx-auto">
+      <h1 class="text-xl font-bold">Performance surf camp</h1>
+      <p class="text-xs font-normal mb-4 opacity-50">
+        Cli Surf Yoga House Morocco, Hay ait soual, Tamraght, Agadir,
+        Souss-Massa, Agadir-ida ou tanane, Morocco
+      </p>
+      <div class="flex items-center my-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="19"
+          height="18"
+          viewBox="0 0 19 18"
+          fill="none"
+        >
+          <path
+            d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
+            fill="#FFAD32"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="19"
+          height="18"
+          viewBox="0 0 19 18"
+          fill="none"
+        >
+          <path
+            d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
+            fill="#FFAD32"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="19"
+          height="18"
+          viewBox="0 0 19 18"
+          fill="none"
+        >
+          <path
+            d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
+            fill="#FFAD32"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="19"
+          height="18"
+          viewBox="0 0 19 18"
+          fill="none"
+        >
+          <path
+            d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
+            fill="#FFAD32"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="19"
+          height="18"
+          viewBox="0 0 19 18"
+          fill="none"
+        >
+          <path
+            d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
+            fill="#FFAD32"
+          />
+        </svg>
+        <span class="ml-2 Helvetica text-xs text-normal">1241 Reviews</span>
+      </div>
+      <div class="flex justify-between">
+        <div class="flex w-[70%] mb-10">
+          <!-- Swiper -->
+          <div thumbsSlider="" class="swiper mySwiper mr-2 h-[630px] mt-2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              --swiper-navigation-color: #fff;
+              --swiper-pagination-color: #fff;
+            "
+            class="swiper mySwiper2 h-[645px]"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-[28%]">
+          <div class="flex justify-between">
+            <h1>$100 / Per Package</h1>
+            <div class="flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+              >
+                <path
+                  d="M4.81066 11.9174L12.4172 4.31077L11.3566 3.25012L3.75 10.8567V11.9174H4.81066ZM5.43198 13.4174H2.25V10.2354L10.8263 1.65913C11.1192 1.36623 11.594 1.36623 11.8869 1.65913L14.0083 3.78044C14.3012 4.07334 14.3012 4.54821 14.0083 4.84111L5.43198 13.4174ZM2.25 14.9174H15.75V16.4174H2.25V14.9174Z"
+                  fill="#062645"
+                />
+              </svg>
+              <span class="ml-2">Edit Request</span>
+            </div>
+          </div>
+          <p class="ml-4 mt-4 text-base font-bold">14 Days of Surf Lessons</p>
+          <span class="ml-4 text-xs text-normal block">No accommodation</span>
+
+          <h3 class="ml-4 mt-6 text-base text-bold">Selected Duration</h3>
+          <div class="flex jusitfy-center items-center ml-8 mt-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="19"
+              height="19"
+              viewBox="0 0 19 19"
+              fill="none"
+            >
+              <g opacity="0.7">
+                <path
+                  d="M7.12565 0.791992V2.37533H11.8757V0.791992H13.459V2.37533H16.6257C17.0629 2.37533 17.4173 2.72977 17.4173 3.16699V15.8337C17.4173 16.2709 17.0629 16.6253 16.6257 16.6253H2.37565C1.93843 16.6253 1.58398 16.2709 1.58398 15.8337V3.16699C1.58398 2.72977 1.93843 2.37533 2.37565 2.37533H5.54232V0.791992H7.12565ZM15.834 8.70866H3.16732V15.042H15.834V8.70866ZM6.33398 10.292V11.8753H4.75065V10.292H6.33398ZM10.2923 10.292V11.8753H8.70898V10.292H10.2923ZM14.2507 10.292V11.8753H12.6673V10.292H14.2507ZM5.54232 3.95866H3.16732V7.12533H15.834V3.95866H13.459V5.54199H11.8757V3.95866H7.12565V5.54199H5.54232V3.95866Z"
+                  fill="black"
+                />
+              </g>
+            </svg>
+            <div class="ml-2 opacity-70 text-base text-normal">
+              August 9 -August 22
+            </div>
+          </div>
+          <div>
+            <h3 class="ml-4 mt-6 text-base font-bold">Select Guests</h3>
+            <div class="flex jusitfy-center items-center ml-8 mt-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none"
+              >
+                <g opacity="0.7">
+                  <path
+                    d="M9.50065 8.70801C11.6868 8.70801 13.459 10.4802 13.459 12.6663V17.4163H11.8757V12.6663C11.8757 11.4015 10.8869 10.3676 9.64022 10.2954L9.50065 10.2913C8.23581 10.2913 7.20192 11.2801 7.12968 12.5268L7.12565 12.6663V17.4163H5.54232V12.6663C5.54232 10.4802 7.31453 8.70801 9.50065 8.70801ZM4.35482 11.083C4.57557 11.083 4.79031 11.1088 4.99615 11.1576C4.86308 11.5533 4.78131 11.9713 4.75774 12.4045L4.75065 12.6663L4.75121 12.7341C4.66164 12.7024 4.56715 12.6811 4.46918 12.6718L4.35482 12.6663C3.73756 12.6663 3.23029 13.1373 3.17276 13.7394L3.16732 13.8538V17.4163H1.58398V13.8538C1.58398 12.3236 2.82453 11.083 4.35482 11.083ZM14.6465 11.083C16.1768 11.083 17.4173 12.3236 17.4173 13.8538V17.4163H15.834V13.8538C15.834 13.2366 15.363 12.7294 14.7609 12.6718L14.6465 12.6663C14.5078 12.6663 14.3746 12.6901 14.2509 12.7338L14.2507 12.6663C14.2507 12.1393 14.1648 11.6324 14.0064 11.1587C14.211 11.1088 14.4257 11.083 14.6465 11.083ZM4.35482 6.33301C5.44788 6.33301 6.33398 7.21911 6.33398 8.31217C6.33398 9.40523 5.44788 10.2913 4.35482 10.2913C3.26176 10.2913 2.37565 9.40523 2.37565 8.31217C2.37565 7.21911 3.26176 6.33301 4.35482 6.33301ZM14.6465 6.33301C15.7395 6.33301 16.6257 7.21911 16.6257 8.31217C16.6257 9.40523 15.7395 10.2913 14.6465 10.2913C13.5534 10.2913 12.6673 9.40523 12.6673 8.31217C12.6673 7.21911 13.5534 6.33301 14.6465 6.33301ZM4.35482 7.91634C4.13621 7.91634 3.95898 8.0936 3.95898 8.31217C3.95898 8.53075 4.13621 8.70801 4.35482 8.70801C4.57343 8.70801 4.75065 8.53075 4.75065 8.31217C4.75065 8.0936 4.57343 7.91634 4.35482 7.91634ZM14.6465 7.91634C14.4279 7.91634 14.2507 8.0936 14.2507 8.31217C14.2507 8.53075 14.4279 8.70801 14.6465 8.70801C14.8651 8.70801 15.0423 8.53075 15.0423 8.31217C15.0423 8.0936 14.8651 7.91634 14.6465 7.91634ZM9.50065 1.58301C11.2495 1.58301 12.6673 3.00077 12.6673 4.74967C12.6673 6.49858 11.2495 7.91634 9.50065 7.91634C7.75175 7.91634 6.33398 6.49858 6.33398 4.74967C6.33398 3.00077 7.75175 1.58301 9.50065 1.58301ZM9.50065 3.16634C8.62618 3.16634 7.91732 3.87522 7.91732 4.74967C7.91732 5.62413 8.62618 6.33301 9.50065 6.33301C10.3751 6.33301 11.084 5.62413 11.084 4.74967C11.084 3.87522 10.3751 3.16634 9.50065 3.16634Z"
+                    fill="black"
+                  />
+                </g>
+              </svg>
+              <div class="ml-2">
+                <span class="opacity-70 text-base text-normal">Guest</span>
+                <span class="font-bold">2</span>
+              </div>
+            </div>
+            <hr class="mt-4" />
+            <div>
+              <span>Status:</span> <span class="font-bold">Booked</span>
+            </div>
+            <div class="grid gird-cols-1 xl:grid-cols-2 gap-2 mt-10">
+              <button
+                type="button"
+                class="w-fit flex items-center block text-black font-medium border border-dark-red rounded-lg text-base Helvetica px-6 py-2.5 text-center bg-white mt-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <path
+                    d="M9.0015 7.93987L12.7138 4.22754L13.7744 5.2882L10.0622 9.00052L13.7744 12.7128L12.7138 13.7734L9.0015 10.0612L5.28917 13.7734L4.22852 12.7128L7.94085 9.00052L4.22852 5.2882L5.28917 4.22754L9.0015 7.93987Z"
+                    fill="#91112B"
+                  />
+                </svg>
+                <span class="block ml-2 dark-red font-bold text-base"
+                  >Cancel Trip</span
+                >
+              </button>
+              <button
+                type="submit"
+                class="w-fit xl:w-full block text-white font-medium rounded-lg text-base Helvetica px-8 py-2.5 text-center bg-dark-blue mt-6"
+              >
+                Pay Now
+              </button>
+            </div>
+            <button
+              type="button"
+              class="w-full block text-black font-medium border border-dark-blue rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-white mt-6 mb-24"
+            >
+              Ask Questions
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark-blue">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="mb-6 md:mb-0 flex justify-center items-center">
+          <a href="https://flowbite.com/" class="flex items-center">
+            <img
+              src="./assets//footer-logo.svg"
+              class="h-8 mr-3 w-[269px] h-[99px] mb-10"
+              alt="FlowBite Logo"
+            />
+          </a>
+        </div>
+        <div class="flex items-center justify-center mb-10">
+          <div class="flex items-center">
+            <svg
+              class="w-3 h-3 text-yellow-500 mr-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+              />
+            </svg>
+            <svg
+              class="w-3 h-3 text-yellow-500 mr-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+              />
+            </svg>
+            <svg
+              class="w-3 h-3 text-yellow-500 mr-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+              />
+            </svg>
+            <svg
+              class="w-3 h-3 text-yellow-500 mr-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+              />
+            </svg>
+            <svg
+              class="w-3 h-3 text-yellow-500 mr-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 20"
+            >
+              <path
+                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+              />
+            </svg>
+            <p class="ml-2 text-xs LucidaGrande font-medium text-white">
+              4.95 rating
+            </p>
+            <span class="ml-2 text-xs LucidaGrande font-medium text-white"
+              >124.131 Reviews</span
+            >
+          </div>
+        </div>
+        <p
+          class="text-2xl text-white font-normal text-center mb-10 LucidaGrande"
+        >
+          Subscribe to be notified of new activities immediately
+        </p>
+        <form class="max-w-[705px] m-auto h-[44px] mb-12">
+          <label
+            for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only"
+            >Search</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+            ></div>
+            <input
+              type="search"
+              id="default-search"
+              class="block w-full p-4 pl-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+              placeholder="Search Mockups, Logos..."
+              required
+            />
+            <button
+              type="submit"
+              class="text-white absolute right-2.5 bottom-2.5 bg-dark-blue hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+            >
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex justify-center items-center">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-14 lg:gap-44 mt-10">
+            <div>
+              <ul class="text-gray-500 font-medium">
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://flowbite.com/" class="hover:underline"
+                    >Surf</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >About Us</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >FAQ</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="text-gray-500 font-medium">
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Contact Us</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Help Center</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >About SoulSurf</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Log In</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="text-gray-500 font-medium">
+                <!-- <li class="mb-10 text-sm text-white Helvetica">
+                    <a href="https://tailwindcss.com/" class="hover:underline"
+                      >Register As School</a
+                    >
+                  </li> -->
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Cookies Settings</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Terms & Conditions</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Privacy And Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="text-gray-500 font-medium">
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Tailwind CSS</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Tailwind CSS</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Tailwind CSS</a
+                  >
+                </li>
+                <li class="mb-10 text-sm text-white Helvetica">
+                  <a href="https://tailwindcss.com/" class="hover:underline"
+                    >Tailwind CSS</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <div class="flex justify-center items-center">
+          <span class="text-sm text-gray-500 sm:text-center"
+            >© 2023
+            <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a
+            >. All Rights Reserved.
+          </span>
+        </div>
+      </div>
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          loop: true,
+          spaceBetween: 8,
+          slidesPerView: 6,
+          freeMode: true,
+          watchSlidesProgress: true,
+          direction: "vertical",
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+          loop: true,
+          spaceBetween: 10,
+          thumbs: {
+            swiper: swiper,
+          },
+        });
+      </script>
+    </footer>
+  </body>
+</html>
