@@ -31,6 +31,10 @@
             },
             backgroundColor: {
               "dark-red": "#91112B",
+              green: "#2A8218",
+            },
+            textColor: {
+              "dark-blue": "#062645",
             },
           },
         },
@@ -662,9 +666,7 @@
                 class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
               >
                 <div class="relative w-full max-w-md max-h-full">
-                  <div
-                    class="relative bg-white rounded-lg shadow dark:bg-gray-700"
-                  >
+                  <div class="relative bg-white rounded-lg shadow">
                     <button
                       type="button"
                       class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -1093,8 +1095,439 @@
       </div>
       <div class="mb-24">
         <h1 class="text-xl font-bold mb-10">Location</h1>
+        <div class="relative w-full h-96">
+          <iframe
+            class="absolute top-0 left-0 w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12080.73732861526!2d-74.0059418!3d40.7127847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA2JzEwLjAiTiA3NMKwMjUnMzcuNyJX!5e0!3m2!1sen!2sus!4v1648482801994!5m2!1sen!2sus"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          >
+          </iframe>
+        </div>
+      </div>
+      <div class="mb-24 text-dark-blue">
+        <h1 class="text-xl font-bold mb-10">Cancelled Policy</h1>
+        <div class="opacity-70 mx-10">
+          <!-- policy1 -->
+          <div class="mb-10">
+            <h1 class="text-xl font-bold mb-10">
+              2. Travel Booking Cancellation Policy:
+            </h1>
+            <p class="text-base font-normal mb-4 mx-4">
+              If you need to cancel your travel reservation, the following
+              cancellation policy applies:
+            </p>
+            <ul class="mx-4 list-disc">
+              <li>
+                Cancellations made 30 days or more prior to the departure date
+                will receive a full refund.
+              </li>
+              <li>
+                Cancellations made between 15 to 29 days before departure will
+                incur a 50% cancellation fee.
+              </li>
+              <li>
+                Cancellations made 14 days or less before departure will not be
+                eligible for a refund.
+              </li>
+            </ul>
+          </div>
+          <!-- end -->
+          <!-- policy2 -->
+          <div class="mb-10">
+            <h1 class="text-xl font-bold mb-10">
+              1. Event Ticket Cancellation Policy:
+            </h1>
+            <p class="text-base font-normal mb-4 mx-4">
+              Event ticket cancellations are subject to the following terms:
+            </p>
+            <ul class="mx-4 list-disc">
+              <li>
+                Cancellations made within 48 hours of the event start time are
+                non-refundable.
+              </li>
+              <li>
+                Cancellations requested 7 days prior to the event will receive a
+                50% refund.
+              </li>
+              <li>
+                Cancellations made more than 7 days in advance will receive a
+                full refund.
+              </li>
+            </ul>
+          </div>
+          <!-- end -->
+          <!-- policy3 -->
+          <div class="mb-10">
+            <h1 class="text-xl font-bold mb-10">
+              3. Hotel Reservation Cancellation Policy:
+            </h1>
+            <p class="text-base font-normal mb-4 mx-4">
+              Our hotel reservation cancellation policy is as follows:
+            </p>
+            <ul class="mx-4 list-disc">
+              <li>
+                Cancellations made up to 72 hours before check-in time will
+                receive a full refund.
+              </li>
+              <li>
+                Cancellations requested within 72 hours of check-in will incur a
+                one-night stay charge.
+              </li>
+            </ul>
+          </div>
+          <!-- end -->
+          <!-- policy4 -->
+          <div class="mb-10">
+            <h1 class="text-xl font-bold mb-10">
+              4. Subscription Service Cancellation Policy:
+            </h1>
+            <p class="text-base font-normal mb-4 mx-4">
+              You can cancel your subscription at any time with the following
+              terms:
+            </p>
+            <ul class="mx-4 list-disc">
+              <li>
+                Monthly subscription cancellations take effect at the end of the
+                current billing cycle.
+              </li>
+              <li>
+                Annual subscription cancellations will be refunded on a pro-rata
+                basis for the remaining months.
+              </li>
+            </ul>
+          </div>
+          <!-- policy5 -->
+          <div class="mb-10">
+            <h1 class="text-xl font-bold mb-10">
+              5. Workshop or Course Cancellation Policy:
+            </h1>
+            <p class="text-base font-normal mb-4 mx-4">
+              For workshop or course cancellations, the following rules apply:
+            </p>
+            <ul class="mx-4 list-disc">
+              <li>
+                Cancellations made more than two weeks before the start date
+                will receive a full refund.
+              </li>
+              <li>
+                Cancellations within 7 to 14 days before the start date will
+                incur a 25% cancellation fee.
+              </li>
+              <li>
+                No refunds will be provided for cancellations made within 7 days
+                of the start date.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <!-- overview end -->
+      <!--  Frequently Asked Questions -->
+      <div class="mb-24">
+        <h1 class="text-xl Helvetica font-bold text-center mt-52 mb-6">
+          Frequently Asked Questions
+        </h1>
+        <div
+          id="accordion-flush"
+          data-accordion="collapse"
+          data-active-classes="bg-white dark:bg-white-900 text-white-900 dark:text-black"
+          data-inactive-classes="text-gray-500 "
+          class="grid grid-cols-1 md:grid-cols-2 gap-10 justify-between w-full"
+        >
+          <div>
+            <h2 id="accordion-flush-heading-1 ">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700"
+                data-accordion-target="#accordion-flush-body-1"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-1"
+              >
+                <span>What is Flowbite?</span>
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-1"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-1"
+            >
+              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500">
+                  Flowbite is an open-source library of interactive components
+                  built on top of Tailwind CSS including buttons, dropdowns,
+                  modals, navbars, and more.
+                </p>
+                <p class="text-gray-500">
+                  Check out this guide to learn how to
+                  <a
+                    href="/docs/getting-started/introduction/"
+                    class="text-blue-600"
+                    >get started</a
+                  >
+                  and start developing websites even faster with components on
+                  top of Tailwind CSS.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 id="accordion-flush-heading-2">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700"
+                data-accordion-target="#accordion-flush-body-2"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-2"
+              >
+                <span>Is there a Figma file available?</span>
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-2"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-2"
+            >
+              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500">
+                  Flowbite is first conceptualized and designed using the Figma
+                  software so everything you see in the library has a design
+                  equivalent in our Figma file.
+                </p>
+                <p class="text-gray-500">
+                  Check out the
+                  <a href="https://flowbite.com/figma/" class="text-blue-600"
+                    >Figma design system</a
+                  >
+                  based on the utility classes from Tailwind CSS and components
+                  from Flowbite.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 id="accordion-flush-heading-3">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700"
+                data-accordion-target="#accordion-flush-body-3"
+                aria-expanded="false"
+                aria-controls="accordion-flush-body-3"
+              >
+                <span
+                  >What are the differences between Flowbite and Tailwind
+                  UI?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-flush-body-3"
+              class="hidden"
+              aria-labelledby="accordion-flush-heading-3"
+            >
+              <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                <p class="mb-2 text-gray-500">
+                  The main difference is that the core components from Flowbite
+                  are open source under the MIT license, whereas Tailwind UI is
+                  a paid product. Another difference is that Flowbite relies on
+                  smaller and standalone components, whereas Tailwind UI offers
+                  sections of pages.
+                </p>
+                <p class="mb-2 text-gray-500">
+                  However, we actually recommend using both Flowbite, Flowbite
+                  Pro, and even Tailwind UI as there is no technical reason
+                  stopping you from using the best of two worlds.
+                </p>
+                <p class="mb-2 text-gray-500">
+                  Learn more about these technologies:
+                </p>
+                <ul class="pl-5 text-gray-500 list-disc">
+                  <li>
+                    <a href="https://flowbite.com/pro/" class="text-blue-600"
+                      >Flowbite Pro</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://tailwindui.com/"
+                      rel="nofollow"
+                      class="text-blue-600"
+                      >Tailwind UI</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- rating -->
+      <div class="mb-24">
+        <h1 class="text-xl font-bold mb-10">Reviews</h1>
+        <div class="grid grid-cols-3 items-center jusitfy-center">
+          <div class="flex gap-6 items-center jusitfy-center m-auto">
+            <div class="text-6xl font-bold">4.9</div>
+            <div class="flex flex-col">
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="22"
+                  viewBox="0 0 24 22"
+                  fill="none"
+                >
+                  <path
+                    d="M11.0489 0.927049C11.3483 0.0057385 12.6517 0.00573993 12.9511 0.927051L14.9187 6.98278C15.0526 7.3948 15.4365 7.67376 15.8697 7.67376H22.2371C23.2058 7.67376 23.6086 8.91338 22.8249 9.48278L17.6736 13.2254C17.3231 13.4801 17.1764 13.9314 17.3103 14.3435L19.2779 20.3992C19.5773 21.3205 18.5228 22.0866 17.7391 21.5172L12.5878 17.7746C12.2373 17.5199 11.7627 17.5199 11.4122 17.7746L6.2609 21.5172C5.47719 22.0866 4.42271 21.3205 4.72206 20.3992L6.68969 14.3435C6.82356 13.9314 6.6769 13.4801 6.32642 13.2254L1.17511 9.48278C0.391392 8.91338 0.794168 7.67376 1.76289 7.67376H8.13026C8.56349 7.67376 8.94744 7.3948 9.08132 6.98278L11.0489 0.927049Z"
+                    fill="#FFAD32"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="22"
+                  viewBox="0 0 24 22"
+                  fill="none"
+                >
+                  <path
+                    d="M11.0489 0.927049C11.3483 0.0057385 12.6517 0.00573993 12.9511 0.927051L14.9187 6.98278C15.0526 7.3948 15.4365 7.67376 15.8697 7.67376H22.2371C23.2058 7.67376 23.6086 8.91338 22.8249 9.48278L17.6736 13.2254C17.3231 13.4801 17.1764 13.9314 17.3103 14.3435L19.2779 20.3992C19.5773 21.3205 18.5228 22.0866 17.7391 21.5172L12.5878 17.7746C12.2373 17.5199 11.7627 17.5199 11.4122 17.7746L6.2609 21.5172C5.47719 22.0866 4.42271 21.3205 4.72206 20.3992L6.68969 14.3435C6.82356 13.9314 6.6769 13.4801 6.32642 13.2254L1.17511 9.48278C0.391392 8.91338 0.794168 7.67376 1.76289 7.67376H8.13026C8.56349 7.67376 8.94744 7.3948 9.08132 6.98278L11.0489 0.927049Z"
+                    fill="#FFAD32"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="22"
+                  viewBox="0 0 24 22"
+                  fill="none"
+                >
+                  <path
+                    d="M11.0489 0.927049C11.3483 0.0057385 12.6517 0.00573993 12.9511 0.927051L14.9187 6.98278C15.0526 7.3948 15.4365 7.67376 15.8697 7.67376H22.2371C23.2058 7.67376 23.6086 8.91338 22.8249 9.48278L17.6736 13.2254C17.3231 13.4801 17.1764 13.9314 17.3103 14.3435L19.2779 20.3992C19.5773 21.3205 18.5228 22.0866 17.7391 21.5172L12.5878 17.7746C12.2373 17.5199 11.7627 17.5199 11.4122 17.7746L6.2609 21.5172C5.47719 22.0866 4.42271 21.3205 4.72206 20.3992L6.68969 14.3435C6.82356 13.9314 6.6769 13.4801 6.32642 13.2254L1.17511 9.48278C0.391392 8.91338 0.794168 7.67376 1.76289 7.67376H8.13026C8.56349 7.67376 8.94744 7.3948 9.08132 6.98278L11.0489 0.927049Z"
+                    fill="#FFAD32"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="22"
+                  viewBox="0 0 24 22"
+                  fill="none"
+                >
+                  <path
+                    d="M11.0489 0.927049C11.3483 0.0057385 12.6517 0.00573993 12.9511 0.927051L14.9187 6.98278C15.0526 7.3948 15.4365 7.67376 15.8697 7.67376H22.2371C23.2058 7.67376 23.6086 8.91338 22.8249 9.48278L17.6736 13.2254C17.3231 13.4801 17.1764 13.9314 17.3103 14.3435L19.2779 20.3992C19.5773 21.3205 18.5228 22.0866 17.7391 21.5172L12.5878 17.7746C12.2373 17.5199 11.7627 17.5199 11.4122 17.7746L6.2609 21.5172C5.47719 22.0866 4.42271 21.3205 4.72206 20.3992L6.68969 14.3435C6.82356 13.9314 6.6769 13.4801 6.32642 13.2254L1.17511 9.48278C0.391392 8.91338 0.794168 7.67376 1.76289 7.67376H8.13026C8.56349 7.67376 8.94744 7.3948 9.08132 6.98278L11.0489 0.927049Z"
+                    fill="#FFAD32"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="22"
+                  viewBox="0 0 24 22"
+                  fill="none"
+                >
+                  <path
+                    d="M11.0489 0.927049C11.3483 0.0057385 12.6517 0.00573993 12.9511 0.927051L14.9187 6.98278C15.0526 7.3948 15.4365 7.67376 15.8697 7.67376H22.2371C23.2058 7.67376 23.6086 8.91338 22.8249 9.48278L17.6736 13.2254C17.3231 13.4801 17.1764 13.9314 17.3103 14.3435L19.2779 20.3992C19.5773 21.3205 18.5228 22.0866 17.7391 21.5172L12.5878 17.7746C12.2373 17.5199 11.7627 17.5199 11.4122 17.7746L6.2609 21.5172C5.47719 22.0866 4.42271 21.3205 4.72206 20.3992L6.68969 14.3435C6.82356 13.9314 6.6769 13.4801 6.32642 13.2254L1.17511 9.48278C0.391392 8.91338 0.794168 7.67376 1.76289 7.67376H8.13026C8.56349 7.67376 8.94744 7.3948 9.08132 6.98278L11.0489 0.927049Z"
+                    fill="#FFAD32"
+                  />
+                </svg>
+              </div>
+              <span class="text-xs text-normal">1241 Reviews</span>
+            </div>
+          </div>
+          <div class="col-span-2">
+            <div class="flex items-center mt-4">
+              <div class="text-sm font-medium text-blue-600">5 star</div>
+              <div class="w-3/4 h-3 mx-4 bg-gray-200 rounded">
+                <div class="h-3 bg-green rounded" style="width: 70%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-500">364</span>
+            </div>
+            <div class="flex items-center mt-4">
+              <div class="text-sm font-medium text-blue-600">4 star</div>
+              <div class="w-3/4 h-3 mx-4 bg-gray-200 rounded">
+                <div class="h-3 bg-green rounded" style="width: 17%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-500">23</span>
+            </div>
+            <div class="flex items-center mt-4">
+              <div class="text-sm font-medium text-blue-600">3 star</div>
+              <div class="w-3/4 h-3 mx-4 bg-gray-200 rounded">
+                <div class="h-3 bg-green rounded" style="width: 8%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-500">12</span>
+            </div>
+            <div class="flex items-center mt-4">
+              <div class="text-sm font-medium text-blue-600">2 star</div>
+              <div class="w-3/4 h-3 mx-4 bg-gray-200 rounded">
+                <div class="h-3 bg-green rounded" style="width: 4%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-500">10</span>
+            </div>
+            <div class="flex items-center mt-4">
+              <div class="text-sm font-medium text-blue-600">1 star</div>
+              <div class="w-3/4 h-3 mx-4 bg-gray-200 rounded">
+                <div class="h-3 bg-green rounded" style="width: 1%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-500">2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end -->
+      <!-- review comment -->
+      <div>
+        <h1>3 Reviews</h1>
+      </div>
     </div>
     <footer class="bg-dark-blue">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
