@@ -29,6 +29,9 @@
               "dark-red": "#91112b",
               "dark-blue": "#062645",
             },
+            backgroundColor: {
+              "dark-red": "#91112B",
+            },
           },
         },
       };
@@ -416,7 +419,7 @@
   </header>
   <body>
     <div class="max-w-screen-xl mx-auto">
-      <h1 class="text-xl font-bold">Performance surf camp</h1>
+      <h1 class="text-xl font-bold mt-10">Performance surf camp</h1>
       <p class="text-xs font-normal mb-4 opacity-50">
         Cli Surf Yoga House Morocco, Hay ait soual, Tamraght, Agadir,
         Souss-Massa, Agadir-ida ou tanane, Morocco
@@ -632,6 +635,8 @@
             </div>
             <div class="grid gird-cols-1 xl:grid-cols-2 gap-2 mt-10">
               <button
+                data-modal-target="popup-modal"
+                data-modal-toggle="popup-modal"
                 type="button"
                 class="w-fit flex items-center block text-black font-medium border border-dark-red rounded-lg text-base Helvetica px-6 py-2.5 text-center bg-white mt-6"
               >
@@ -651,6 +656,93 @@
                   >Cancel Trip</span
                 >
               </button>
+              <div
+                id="popup-modal"
+                tabindex="-1"
+                class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+              >
+                <div class="relative w-full max-w-md max-h-full">
+                  <div
+                    class="relative bg-white rounded-lg shadow dark:bg-gray-700"
+                  >
+                    <button
+                      type="button"
+                      class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                      data-modal-hide="popup-modal"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 14"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                        />
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                    </button>
+                    <div class="p-6 text-center">
+                      <svg
+                        class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                        />
+                      </svg>
+                      <h3 class="text-lg font-normal text-bold">
+                        Do you want to cancel the event?
+                      </h3>
+                      <p class="text-xs font-normal opacity-50 mb-8">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+                      </p>
+                      <div class="flex justify-center items-center gap-4">
+                        <button
+                          data-modal-hide="popup-modal"
+                          type="button"
+                          class="text-gray-500 w-full bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10"
+                        >
+                          Close
+                        </button>
+                        <button
+                          data-modal-hide="popup-modal"
+                          type="button"
+                          class="text-white bg-dark-red w-full focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm flex justify-center items-center px-5 py-2.5 text-center mr-2"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                          >
+                            <path
+                              d="M9.0015 7.93987L12.7138 4.22754L13.7744 5.2882L10.0622 9.00052L13.7744 12.7128L12.7138 13.7734L9.0015 10.0612L5.28917 13.7734L4.22852 12.7128L7.94085 9.00052L4.22852 5.2882L5.28917 4.22754L9.0015 7.93987Z"
+                              fill="white"
+                            />
+                          </svg>
+                          Cancel Trip
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <button
                 type="submit"
                 class="w-fit xl:w-full block text-white font-medium rounded-lg text-base Helvetica px-8 py-2.5 text-center bg-dark-blue mt-6"
@@ -667,6 +759,342 @@
           </div>
         </div>
       </div>
+      <!-- overview -->
+      <h1 class="text-xl font-bold mb-10">Overview</h1>
+      <div class="text-dark-blue text-base font-normal mx-8 m-auto">
+        <div class="mb-14">
+          <h3 class="font-bold">14 Days of Surf Lessons</h3>
+          <p class="text-xs mt-1 mb-3">No accommodation</p>
+          <p class="opacity-70">
+            4 hours per day of surfing in a group with instructors with 1
+            session of functional training in dedicated Drysurf gym and 2 photo
+            shootings. All equipment is included. Suitable for all levels.
+          </p>
+        </div>
+        <!-- content1 -->
+        <div class="mb-8">
+          <div class="flex gap-4 items-center jusitfy-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_550_254)">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3.09933 1.92849C4.31215 1.92849 5.29541 2.91175 5.29541 4.12457C5.29541 5.33762 4.31215 6.32088 3.09933 6.32088C1.88628 6.32088 0.903023 5.33762 0.903023 4.12457C0.903023 2.91175 1.88628 1.92849 3.09933 1.92849ZM2.84824 12.5891C3.88737 12.5891 4.72998 13.4318 4.72998 14.4709C4.72998 15.5102 3.88737 16.3526 2.84824 16.3526C1.80889 16.3526 0.966501 15.5102 0.966501 14.4709C0.966501 13.4318 1.80889 12.5891 2.84824 12.5891ZM8.75541 12.5891C9.79454 12.5891 10.6369 13.4318 10.6369 14.4709C10.6369 15.5102 9.79454 16.3526 8.75541 16.3526C7.71607 16.3526 6.87367 15.5102 6.87367 14.4709C6.87367 13.4318 7.71607 12.5891 8.75541 12.5891ZM14.6626 12.5891C15.7017 12.5891 16.5443 13.4318 16.5443 14.4709C16.5443 15.5102 15.7017 16.3526 14.6626 16.3526C13.6232 16.3526 12.7808 15.5102 12.7808 14.4709C12.7808 13.4318 13.6232 12.5891 14.6626 12.5891ZM8.47041 1.18262H16.58C17.3617 1.18262 18.0013 1.82218 18.0013 2.60392V8.38305C18.0013 9.16479 17.3617 9.80458 16.58 9.80458H8.47041C7.70607 9.80458 7.07759 9.19284 7.0502 8.43479L9.53389 5.9511C10.1356 5.34936 10.1354 4.3674 9.53389 3.76588C8.93237 3.16414 7.95041 3.16414 7.34867 3.76588L7.04911 4.06544V2.60392C7.04911 1.82218 7.68867 1.18262 8.47041 1.18262ZM9.07802 7.6174H15.9724V8.11392H9.07802V7.6174ZM10.5415 5.24523H15.9724V5.74197H10.5415V5.24523ZM11.1048 2.87327H15.9724V3.36979H11.1048V2.87327ZM9.1828 4.11697C9.59063 4.52479 9.59063 5.19218 9.1828 5.60001L6.18693 8.59588V11.3194H0.0117188V8.10371C0.0117188 7.41153 0.578023 6.84523 1.26998 6.84523H4.92846C4.94259 6.84523 4.95672 6.84566 4.97063 6.8461L7.69976 4.11697C8.10759 3.70914 8.77498 3.70914 9.1828 4.11697Z"
+                  fill="#062645"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_550_254">
+                  <rect width="18" height="18" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="font-bold">Classes</span>
+          </div>
+          <div class="opacity-70 mx-9">
+            <p class="mt-2 mb-4">
+              Students learn surfing in small groups with instructors, suitable
+              for all levels.
+            </p>
+            <ul class="mx-8 list-disc">
+              <li>Small groups of max 8 students per instructor</li>
+              <li>All surf equipment is included</li>
+              <li>Lessons are in Spanish and English</li>
+              <li>Two photo shootings 10:00 - 12:00 on Tuesdays and Fridays</li>
+              <li>1 day of functional training in Drysurf gym</li>
+            </ul>
+          </div>
+        </div>
+        <!-- end -->
+        <!-- content2 -->
+        <div class="mb-8">
+          <div class="flex gap-4 items-center jusitfy-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_293_76)">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.71084 15.7484V17.242C5.71084 17.6374 5.37349 17.9669 4.96386 17.9669H2.98795C2.55422 17.9669 2.21687 17.6374 2.21687 17.242V15.7484H0.891566V6.83084C0.385542 6.80888 0 6.43548 0 5.97423V4.61243C0 4.17314 0.385542 3.77778 0.891566 3.75581V3.11884C0.891566 -1.03245 17.1084 -1.03245 17.1084 3.11884V3.75581C17.5904 3.77778 18 4.17314 18 4.61243V5.97423C18 6.43548 17.5904 6.80888 17.1084 6.83084L17.0843 15.7484H15.7831V17.242C15.7831 17.6374 15.4458 17.9669 15.012 17.9669H13.0602C12.6265 17.9669 12.2892 17.6374 12.2892 17.242V15.7484H5.71084ZM5.85542 1.62525C5.61446 1.62525 5.42169 1.80097 5.42169 2.02062V2.81134C5.42169 3.03098 5.61446 3.2067 5.85542 3.2067H12.1446C12.3855 3.2067 12.5783 3.03098 12.5783 2.81134V2.02062C12.5783 1.80097 12.3855 1.62525 12.1446 1.62525H5.85542ZM2.50602 4.74422V9.55444C6.89157 10.5648 11.1084 10.5648 15.494 9.55444V4.74422H2.50602ZM13.2289 12.3439C12.5301 12.3439 12 12.8491 12 13.4641C12 14.0572 12.5301 14.5624 13.2289 14.5624C13.8795 14.5624 14.4337 14.0572 14.4337 13.4641C14.4337 12.8491 13.8795 12.3439 13.2289 12.3439ZM4.79518 12.3439C5.44578 12.3439 6 12.8491 6 13.4641C6 14.0572 5.44578 14.5624 4.79518 14.5624C4.12048 14.5624 3.59036 14.0572 3.59036 13.4641C3.59036 12.8491 4.12048 12.3439 4.79518 12.3439Z"
+                  fill="#062645"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_293_76">
+                  <rect width="18" height="18" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="font-bold">Transport</span>
+          </div>
+          <div class="opacity-70 mx-9">
+            <p class="mt-2 mb-4">
+              Students gather at the school before class, get wetsuit and surf
+              board. Then:
+            </p>
+            <ul class="mx-8 list-disc">
+              <li>
+                Students get to the van and school drives the group to the beach
+              </li>
+              <li>Surf theory and practice at the beach from 10:00 to 12:00</li>
+              <li>30 mins break at the beach</li>
+              <li>
+                Second session of surf theory and practice at the beach from
+                12:30 to 14:30
+              </li>
+              <li>
+                Students get back in the van and school drives everyone back
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end -->
+        <!-- content3 -->
+        <div class="mb-8">
+          <div class="flex gap-4 items-center jusitfy-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_293_81)">
+                <path
+                  d="M-0.0449219 17.9112H3.78743V8.15332H-0.0449219V17.9112ZM1.28474 9.50042H2.45776V10.6888H1.28474V9.50042ZM2.45776 16.5641H1.28474V15.3757H2.45776V16.5641ZM1.28474 13.6264V12.438H2.45776V13.6264H1.28474Z"
+                  fill="#062645"
+                />
+                <path
+                  d="M14.2129 8.15332V17.9112H18.0452V8.15332H14.2129ZM16.7156 16.5641H15.5426V15.3757H16.7156V16.5641ZM15.5426 9.50042H16.7156V10.6888H15.5426V9.50042ZM16.7156 12.438V13.6264H15.5426V12.438H16.7156Z"
+                  fill="#062645"
+                />
+                <path
+                  d="M4.18408 17.9112H7.24855V14.5368C7.24855 14.4259 7.33688 14.3352 7.44758 14.3352H8.8008V17.9112H9.19888V14.3352H10.5521C10.6616 14.3352 10.7511 14.4259 10.7511 14.5368V17.9112H13.8156V5.96384L8.99984 1.6123L4.18408 5.96384V17.9112ZM6.68677 12.9296H5.51374V11.7412H6.68677V12.9296ZM5.51374 8.80481H6.68677V9.99321H5.51374V8.80481ZM11.3129 8.80481H12.4859V9.99321H11.3129V8.80481ZM12.4859 12.9296H11.3129V11.7412H12.4859V12.9296ZM9.58635 12.9296H8.4145V11.7412H9.58635V12.9296ZM8.41333 9.99202V8.80361H9.58517V9.99202H8.41333ZM8.99984 6.59981C8.41333 6.59981 7.93752 6.11657 7.93752 5.52356C7.93752 4.93054 8.4145 4.4473 8.99984 4.4473C9.58517 4.4473 10.0622 4.93054 10.0622 5.52356C10.0622 6.11657 9.58635 6.59981 8.99984 6.59981Z"
+                  fill="#062645"
+                />
+                <path
+                  d="M15.1845 5.56884L9.0002 -0.0200195L2.81592 5.56884L3.35179 6.17737L3.85232 5.72515L3.85586 5.72157L8.86947 1.19106C8.94485 1.12305 9.05909 1.12305 9.13446 1.19106L14.1481 5.72157L14.1516 5.72515L14.6521 6.17737L15.1845 5.56884Z"
+                  fill="#062645"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_293_81">
+                  <rect width="18" height="18" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="font-bold">Accomodation</span>
+          </div>
+          <div class="opacity-70 mx-9">
+            <p class="mt-2 mb-4">
+              Accommodation is not provided. You'll need to find a place to stay
+              in Lanzarote yourself.
+            </p>
+          </div>
+        </div>
+        <!-- end -->
+        <!-- content4 -->
+        <div class="mb-8">
+          <div class="flex gap-4 items-center jusitfy-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="13"
+              viewBox="0 0 18 13"
+              fill="none"
+            >
+              <path
+                d="M8.17343 1.9286C6.45362 2.13105 4.86788 2.95752 3.71686 4.25131C2.56585 5.5451 1.92959 7.21627 1.92871 8.94796V9.77081C1.92871 9.94131 1.99644 10.1048 2.117 10.2254C2.23756 10.3459 2.40107 10.4137 2.57157 10.4137H15.4287C15.5992 10.4137 15.7627 10.3459 15.8833 10.2254C16.0038 10.1048 16.0716 9.94131 16.0716 9.77081V8.94796C16.0707 7.21627 15.4344 5.5451 14.2834 4.25131C13.1324 2.95752 11.5467 2.13105 9.82685 1.9286C9.9161 1.78096 9.96364 1.61189 9.96443 1.43938C9.96443 1.18364 9.86283 0.938369 9.68199 0.757531C9.50115 0.576692 9.25588 0.475098 9.00014 0.475098C8.74439 0.475098 8.49913 0.576692 8.31829 0.757531C8.13745 0.938369 8.03585 1.18364 8.03585 1.43938C8.03663 1.61189 8.08418 1.78096 8.17343 1.9286Z"
+                fill="#062645"
+              />
+              <path
+                d="M17.3797 11.5967H0.620396C0.4499 11.5967 0.286387 11.6644 0.165828 11.785C0.0452685 11.9055 -0.0224609 12.069 -0.0224609 12.2395C-0.0224609 12.41 0.0452685 12.5735 0.165828 12.6941C0.286387 12.8147 0.4499 12.8824 0.620396 12.8824H17.3797C17.5502 12.8824 17.7137 12.8147 17.8343 12.6941C17.9548 12.5735 18.0225 12.41 18.0225 12.2395C18.0225 12.069 17.9548 11.9055 17.8343 11.785C17.7137 11.6644 17.5502 11.5967 17.3797 11.5967Z"
+                fill="#062645"
+              />
+            </svg>
+            <span class="font-bold">Food</span>
+          </div>
+          <div class="opacity-70 mx-9">
+            <p class="mt-2 mb-4">
+              School does not provide food, but it is recommended to take food
+              and something to drink, for a break between sessions during the
+              day. Also there are plenty of cafes and restaurants in the area
+              where you can enjoy dinner after your surf day
+            </p>
+          </div>
+        </div>
+        <!-- end -->
+        <!-- content5 -->
+        <div class="mb-8">
+          <div class="flex gap-4 items-center jusitfy-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_293_95)">
+                <path
+                  d="M17.3684 0H12.3158C11.9674 0.00104046 11.6853 0.283199 11.6842 0.631579V5.68421C11.6853 6.03259 11.9674 6.31475 12.3158 6.31579H14.5263V8.21369C14.5149 8.21107 14.5032 8.21001 14.4916 8.21053H0.315789C0.141384 8.21053 0 8.35191 0 8.52632V15.1579H0.631579C0.805985 15.1579 0.947368 15.2993 0.947368 15.4737C0.947368 15.6481 0.805985 15.7895 0.631579 15.7895H0V16.1053C0 16.2797 0.141384 16.4211 0.315789 16.4211H1.29158C1.44484 15.5098 2.23381 14.8424 3.15789 14.8424C4.08198 14.8424 4.87095 15.5098 5.02421 16.4211H12.3442C12.4975 15.5098 13.2864 14.8424 14.2105 14.8424C15.1346 14.8424 15.9236 15.5098 16.0768 16.4211H17.3684C17.5428 16.4211 17.6842 16.2797 17.6842 16.1053V15.7895H16.7368C16.5624 15.7895 16.4211 15.6481 16.4211 15.4737C16.4211 15.2993 16.5624 15.1579 16.7368 15.1579H17.6842V13.1274C17.6842 13.0683 17.6678 13.0104 17.6368 12.96L15.1579 8.99684V6.31579H17.3684C17.7168 6.31475 17.999 6.03259 18 5.68421V0.631579C17.999 0.283199 17.7168 0.00104046 17.3684 0ZM6.31579 9.47368C6.31683 9.12531 6.59899 8.84315 6.94737 8.84211H9.47368C9.82206 8.84315 10.1042 9.12531 10.1053 9.47368V11.3684C10.1042 11.7168 9.82206 11.999 9.47368 12H6.94737C6.59899 11.999 6.31683 11.7168 6.31579 11.3684V9.47368ZM8.8421 13.2632C8.8421 13.4376 8.70072 13.5789 8.52632 13.5789H7.89474C7.72033 13.5789 7.57895 13.4376 7.57895 13.2632C7.57895 13.0888 7.72033 12.9474 7.89474 12.9474H8.52632C8.70072 12.9474 8.8421 13.0888 8.8421 13.2632ZM3.47368 13.5789H2.84211C2.6677 13.5789 2.52632 13.4376 2.52632 13.2632C2.52632 13.0888 2.6677 12.9474 2.84211 12.9474H3.47368C3.64809 12.9474 3.78947 13.0888 3.78947 13.2632C3.78947 13.4376 3.64809 13.5789 3.47368 13.5789ZM5.05263 11.3684C5.05159 11.7168 4.76943 11.999 4.42105 12H1.89474C1.54636 11.999 1.2642 11.7168 1.26316 11.3684V9.47368C1.2642 9.12531 1.54636 8.84315 1.89474 8.84211H4.42105C4.76943 8.84315 5.05159 9.12531 5.05263 9.47368V11.3684ZM11.6842 15.7895H5.68421C5.5098 15.7895 5.36842 15.6481 5.36842 15.4737C5.36842 15.2993 5.5098 15.1579 5.68421 15.1579H11.6842C11.8586 15.1579 12 15.2993 12 15.4737C12 15.6481 11.8586 15.7895 11.6842 15.7895ZM13.5789 13.5789H12.9474C12.773 13.5789 12.6316 13.4376 12.6316 13.2632C12.6316 13.0888 12.773 12.9474 12.9474 12.9474H13.5789C13.7534 12.9474 13.8947 13.0888 13.8947 13.2632C13.8947 13.4376 13.7534 13.5789 13.5789 13.5789ZM16.0579 11.5168C16.1171 11.6145 16.1193 11.7365 16.0639 11.8363C16.0084 11.9361 15.9037 11.9986 15.7895 12H12.3158C11.9674 11.999 11.6853 11.7168 11.6842 11.3684V9.47368C11.6853 9.12531 11.9674 8.84315 12.3158 8.84211H14.2105C14.3194 8.8426 14.4206 8.89854 14.4789 8.99053L14.5263 9.06632L14.7758 9.46737H14.7789L16.0579 11.5168ZM16.6674 3.98526C16.6078 4.06065 16.5171 4.10482 16.4211 4.10526C16.3496 4.10586 16.2803 4.08126 16.2253 4.03579L15.1579 3.18316V4.60421L15.3821 4.82842C15.5053 4.95253 15.5053 5.15273 15.3821 5.27684C15.2576 5.39897 15.0582 5.39897 14.9337 5.27684L14.8421 5.18526L14.7505 5.27684C14.626 5.39897 14.4266 5.39897 14.3021 5.27684C14.179 5.15273 14.179 4.95253 14.3021 4.82842L14.5263 4.60737V3.18316L13.4589 4.03579C13.4039 4.08126 13.3346 4.10586 13.2632 4.10526C13.1671 4.10482 13.0764 4.06065 13.0168 3.98526C12.9637 3.92041 12.9391 3.83682 12.9486 3.75353C12.9581 3.67024 13.001 3.59435 13.0674 3.54316L14.5263 2.37474V1.26316C14.5263 1.08875 14.6677 0.947369 14.8421 0.947369C15.0165 0.947369 15.1579 1.08875 15.1579 1.26316V2.37474L16.6168 3.54316C16.6832 3.59435 16.7261 3.67024 16.7356 3.75353C16.7451 3.83682 16.7205 3.92041 16.6674 3.98526Z"
+                  fill="#062645"
+                />
+                <path
+                  d="M14.2104 17.9999C14.908 17.9999 15.4736 17.4344 15.4736 16.7368C15.4736 16.0392 14.908 15.4736 14.2104 15.4736C13.5128 15.4736 12.9473 16.0392 12.9473 16.7368C12.9473 17.4344 13.5128 17.9999 14.2104 17.9999Z"
+                  fill="#062645"
+                />
+                <path
+                  d="M9.4739 9.47363H6.94727V11.3684H9.4739V9.47363Z"
+                  fill="#062645"
+                />
+                <path
+                  d="M3.15769 17.9999C3.85531 17.9999 4.42085 17.4344 4.42085 16.7368C4.42085 16.0392 3.85531 15.4736 3.15769 15.4736C2.46007 15.4736 1.89453 16.0392 1.89453 16.7368C1.89453 17.4344 2.46007 17.9999 3.15769 17.9999Z"
+                  fill="#062645"
+                />
+                <path
+                  d="M12.3159 9.47363V11.3684H15.2199L14.0357 9.47363H12.3159Z"
+                  fill="#062645"
+                />
+                <path
+                  d="M4.42116 9.47363H1.89453V11.3684H4.42116V9.47363Z"
+                  fill="#062645"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_293_95">
+                  <rect width="18" height="18" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="font-bold">Airport transfer</span>
+          </div>
+          <div class="opacity-70 mx-9">
+            <p class="mt-2 mb-4">
+              You can take a taxi or rent a car at the airport for an affordable
+              price. Otherwise, please check the availability of the buses to
+              drive to Famara.
+            </p>
+          </div>
+        </div>
+        <!-- end -->
+      </div>
+      <div class="mb-48">
+        <h1 class="text-xl font-bold mb-10">What’s Include</h1>
+        <p class="text-base font-normal mb-4 opacity-50">
+          At SoulSurf, we are dedicated to providing you with an unforgettable
+          and enriching surf experience. Our all-inclusive package ensures that
+          you have everything you need for an incredible time by the waves. When
+          you choose our surf camp, you can look forward to the following
+          inclusions:
+        </p>
+        <ul class="text-base font-normal opacity-70 mx-8 mt-10 list-disc">
+          <li class="mt-8">
+            <span class="font-bold mr-2">Daily Surf Lessons:</span>Enjoy daily
+            surf lessons led by our experienced and certified instructors.
+            Whether you're a beginner or looking to improve your skills, our
+            lessons cater to all levels.
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">Top-Quality Equipment:</span>We provide
+            high-quality surfboards and wetsuits tailored to your skill level
+            and preferences, ensuring you have the best gear for an optimal
+            experience
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">Accommodation:</span>Relax and recharge
+            in comfortable and well-equipped accommodation options. Choose from
+            shared dorms or private rooms, all designed for your comfort
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">Nutritious Meals:</span>Start your day
+            with a delicious and hearty breakfast. Our meal plan includes
+            healthy options to keep you energized throughout your surf sessions.
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">Transportation:</span>We offer
+            convenient transportation to and from the surf spots, making it
+            hassle-free for you to focus on catching waves and enjoying the
+            ocean.
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">Surf Theory Workshops:</span>Enhance
+            your understanding of surfing techniques and ocean awareness with
+            our informative surf theory workshops.
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">Guided Surf Sessions:</span>Join guided
+            surf sessions with our instructors who will be in the water with
+            you, providing real-time feedback and assistance.
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">Safety First:</span>Your safety is our
+            priority. We provide comprehensive safety briefings and have
+            lifeguards on duty during surf sessions.
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">Environmental Stewardship:</span> We
+            are committed to preserving the beauty of our oceans. Join us in
+            beach clean-up initiatives and eco-friendly practices.
+          </li>
+          <li class="mt-8">
+            <span class="font-bold mr-2">24/7 Support:</span> Our team is here
+            to ensure your experience is seamless. From booking to departure, we
+            offer 24/7 support for any questions or assistance you need.
+          </li>
+        </ul>
+      </div>
+      <div class="mb-24">
+        <h1 class="text-xl font-bold mb-10">Instructors</h1>
+        <div class="grid grid-cols-2 gap-12 px-8">
+          <div class="flex items-center space-x-4">
+            <img
+              class="w-20 h-20 rounded-full"
+              src="./assets//icons/profile.jpeg"
+              alt=""
+            />
+            <div class="font-medium">
+              <div class="text-bold">Name Of Instructor</div>
+              <div class="text-sm opacity-70">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <img
+              class="w-20 h-20 rounded-full"
+              src="./assets//icons/profile.jpeg"
+              alt=""
+            />
+            <div class="font-medium">
+              <div class="text-bold text-base mb-2">Name Of Instructor</div>
+              <div class="text-sm opacity-70">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-24">
+        <h1 class="text-xl font-bold mb-10">Location</h1>
+      </div>
+      <!-- overview end -->
     </div>
     <footer class="bg-dark-blue">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -884,7 +1312,7 @@
       <!-- Initialize Swiper -->
       <script>
         var swiper = new Swiper(".mySwiper", {
-          loop: true,
+          //   loop: true,
           spaceBetween: 8,
           slidesPerView: 6,
           freeMode: true,
