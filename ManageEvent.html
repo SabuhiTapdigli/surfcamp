@@ -9,10 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/datepicker.min.js"></script>
 
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css"
+    />
 
     <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
@@ -23,13 +26,9 @@
           borderColor: {
             "dark-red": "#91112b",
             "dark-blue": "#062645",
-            blue: "#1F4DF2",
           },
           backgroundColor: {
             "dark-red": "#91112B",
-          },
-          boxShadow: {
-            lg: "0px 8px 12px -8px rgba(0, 0, 0, 0.10)",
           },
           colors: {
             blue: "#1F4DF2",
@@ -362,6 +361,7 @@
               id="default-search"
               class="w-full pl-6 text-sm text-gray-900 border-b-2 border-x-0 border-t-0 border-gray-300 focus:ring-0 hover:border-b-blue-500"
               placeholder="Search"
+              required
             />
           </div>
         </form>
@@ -421,772 +421,376 @@
     </nav>
   </header>
   <body style="background-color: #fcfcff">
-    <div class="h-[229px] bg-dark-blue"></div>
-    <div class="mx-auto max-w-screen-xl flex gap:4 lg:gap-20 mb-32 relative">
-      <div class="bg-white rounded-md">
-        <div class="flex flex-col items-center justify-center">
-          <div
-            class="rounded-full bg-dark-blue h-[93px] w-[93px] mb-6 absolute -mt-[90px]"
-          >
-            <img
-              class="h-full w-full object-cover rounded-full"
-              src="./assets/icons/profile.jpeg"
-            />
-          </div>
+    <div class="mx-auto max-w-screen-xl">
+      <a
+        href="./SchoolAccount.html"
+        class="flex mt-8 px-4 py-1 jusitfy-center items-center gap-2 rounded text-base bg-light-blue w-fit"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+        >
+          <path
+            d="M5.87132 8.24992H15V9.74992H5.87132L9.8943 13.7729L8.83365 14.8335L3 8.99992L8.83365 3.16626L9.8943 4.22692L5.87132 8.24992Z"
+            fill="black"
+          />
+        </svg>
+        Back
+      </a>
 
-          <h1 class="Helvetica text-base font-bold mt-[75px]">Name Surname</h1>
-          <p class="Helvetica text-xs font-normal opacity-50">
-            Example@gmail.com
-          </p>
-        </div>
-
+      <h1 class="mt-6 text-3xl font-bold">Basic Informations</h1>
+      <p class="text-base font-normal opacity-70 mt-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+    </div>
+    <div class="mx-auto max-w-screen-xl mt-20 flex gap-20 mb-32 relative">
+      <div class="bg-white rounded-md mt-[45px]">
         <ul
           class="py-2 mt-6 flex flex-col gap-4"
           id="myTab"
           data-tabs-toggle="#myTabContent"
           role="tablist"
         >
-          <!-- Dashboard -->
-          <li class="ml-4" role="presentation">
+          <!-- Basic Information -->
+          <li class="mx-4" role="presentation">
             <button
               class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              id="dashboard-tab"
-              data-tabs-target="#dashboard"
+              id="basicInfo-tab"
+              data-tabs-target="#basicInfo"
               type="button"
               role="tab"
-              aria-controls="dashboard"
+              aria-controls="basicInfo"
               aria-selected="false"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="19"
-                viewBox="0 0 19 19"
-                fill="none"
-              >
-                <path
-                  d="M2.375 8.29167C2.375 9.39624 3.27043 10.2917 4.375 10.2917H6.70833C7.8129 10.2917 8.70833 9.39624 8.70833 8.29167V4.375C8.70833 3.27043 7.8129 2.375 6.70833 2.375H4.375C3.27043 2.375 2.375 3.27043 2.375 4.375V8.29167ZM2.375 14.625C2.375 15.7296 3.27043 16.625 4.375 16.625H6.70833C7.8129 16.625 8.70833 15.7296 8.70833 14.625V13.875C8.70833 12.7704 7.8129 11.875 6.70833 11.875H4.375C3.27043 11.875 2.375 12.7704 2.375 13.875V14.625ZM10.2917 14.625C10.2917 15.7296 11.1871 16.625 12.2917 16.625H14.625C15.7296 16.625 16.625 15.7296 16.625 14.625V10.7083C16.625 9.60376 15.7296 8.70833 14.625 8.70833H12.2917C11.1871 8.70833 10.2917 9.60376 10.2917 10.7083V14.625ZM12.2917 2.375C11.1871 2.375 10.2917 3.27043 10.2917 4.375V5.125C10.2917 6.22957 11.1871 7.125 12.2917 7.125H14.625C15.7296 7.125 16.625 6.22957 16.625 5.125V4.375C16.625 3.27043 15.7296 2.375 14.625 2.375H12.2917Z"
-                  fill="black"
-                />
-              </svg>
-              Dashboard
+              Basic Information
             </button>
           </li>
-          <!-- Messages -->
-          <li class="ml-4" role="presentation">
+          <!-- Instructors -->
+          <li class="mx-4" role="presentation">
             <button
               class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              id="message-tab"
-              data-tabs-target="#message"
+              id="instructors-tab"
+              data-tabs-target="#instructors"
               type="button"
               role="tab"
-              aria-controls="message"
+              aria-controls="instructors"
               aria-selected="false"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="19"
-                viewBox="0 0 19 19"
-                fill="none"
-              >
-                <path
-                  d="M7.91732 2.375H11.084C14.5818 2.375 17.4173 5.21053 17.4173 8.70833C17.4173 12.2062 14.5818 15.0417 11.084 15.0417V17.8125C7.12565 16.2292 1.58398 13.8542 1.58398 8.70833C1.58398 5.21053 4.41951 2.375 7.91732 2.375ZM9.50065 13.4583H11.084C13.7073 13.4583 15.834 11.3317 15.834 8.70833C15.834 6.08498 13.7073 3.95833 11.084 3.95833H7.91732C5.29396 3.95833 3.16732 6.08498 3.16732 8.70833C3.16732 11.5662 5.11646 13.4311 9.50065 15.4215V13.4583Z"
-                  fill="black"
-                />
-              </svg>
-              Messages
+              Instructors
             </button>
           </li>
-          <!-- Request Notifications -->
-          <li class="ml-4" role="presentation">
+          <!-- Pricing And Packages -->
+          <li class="mx-4" role="presentation">
             <button
               class="flex whitespace-nowrap gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              id="connotificationtacts-tab"
-              data-tabs-target="#notification"
+              id="price-tab"
+              data-tabs-target="#price"
               type="button"
               role="tab"
-              aria-controls="notification"
+              aria-controls="price"
               aria-selected="false"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="19"
-                viewBox="0 0 19 19"
-                fill="none"
-              >
-                <path
-                  d="M15.834 13.4583H17.4173V15.0416H1.58398V13.4583H3.16732V7.91659C3.16732 4.41878 6.00285 1.58325 9.50065 1.58325C12.9985 1.58325 15.834 4.41878 15.834 7.91659V13.4583ZM14.2507 13.4583V7.91659C14.2507 5.29323 12.124 3.16659 9.50065 3.16659C6.8773 3.16659 4.75065 5.29323 4.75065 7.91659V13.4583H14.2507ZM7.12565 16.6249H11.8757V18.2083H7.12565V16.6249Z"
-                  fill="black"
-                />
-              </svg>
-              Request Notifications
+              Pricing And Packages
             </button>
           </li>
-          <!-- Settings -->
-          <li class="ml-4" role="presentation">
+          <!-- Overview -->
+          <li class="mx-4" role="presentation">
             <button
               class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              id="settings-tab"
-              data-tabs-target="#settings"
+              id="overview-tab"
+              data-tabs-target="#overview"
               type="button"
               role="tab"
-              aria-controls="settings"
+              aria-controls="overview"
               aria-selected="false"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="19"
-                viewBox="0 0 19 19"
-                fill="none"
-              >
-                <path
-                  d="M2.64349 13.4586C2.3013 12.8659 2.04445 12.2473 1.86914 11.6171C2.63901 11.2243 3.1662 10.4238 3.1662 9.50026C3.1662 8.57741 2.6398 7.77743 1.87088 7.3843C2.22454 6.109 2.89612 4.92131 3.85101 3.95053C4.57614 4.42089 5.53299 4.47724 6.33287 4.01543C7.13274 3.55362 7.56236 2.69679 7.51758 1.83363C8.83578 1.49208 10.2001 1.5043 11.4814 1.83567C11.4374 2.69815 11.8669 3.55399 12.6662 4.01543C13.4661 4.47723 14.4229 4.42089 15.148 3.95057C15.6061 4.41749 16.0133 4.94921 16.3556 5.54193C16.6977 6.13465 16.9546 6.75321 17.1299 7.38341C16.36 7.77622 15.8328 8.5767 15.8328 9.50026C15.8328 10.4232 16.3592 11.2231 17.1282 11.6162C16.7745 12.8915 16.103 14.0792 15.1481 15.05C14.4229 14.5797 13.4661 14.5233 12.6662 14.9851C11.8663 15.4469 11.4367 16.3038 11.4815 17.1669C10.1633 17.5084 8.79897 17.4963 7.51768 17.1649C7.56168 16.3023 7.13211 15.4465 6.33287 14.9851C5.53301 14.5233 4.57621 14.5796 3.85109 15.0499C3.39297 14.583 2.9857 14.0513 2.64349 13.4586ZM7.12453 13.6139C7.98854 14.1127 8.60905 14.9014 8.90624 15.8064C9.30073 15.844 9.69783 15.8445 10.0924 15.8077C10.3894 14.9022 11.0101 14.113 11.8745 13.6139C12.7389 13.1148 13.7328 12.972 14.6655 13.1674C14.8946 12.8441 15.0927 12.4999 15.2575 12.1395C14.6223 11.4296 14.2495 10.4979 14.2495 9.50026C14.2495 8.5026 14.6223 7.57097 15.2575 6.86108C15.1751 6.68216 15.084 6.50619 14.9843 6.3336C14.8847 6.161 14.7778 5.99419 14.664 5.83343C13.7318 6.02845 12.7385 5.88546 11.8745 5.38664C11.0105 4.88781 10.3901 4.0991 10.0928 3.19412C9.69838 3.15659 9.3012 3.15605 8.90672 3.19283C8.6096 4.09833 7.98894 4.88757 7.12453 5.38664C6.2601 5.88572 5.26628 6.02859 4.33356 5.83312C4.10443 6.15643 3.90634 6.50061 3.74161 6.86098C4.37673 7.5709 4.74953 8.5026 4.74953 9.50026C4.74953 10.4979 4.37674 11.4296 3.74161 12.1394C3.82403 12.3184 3.91505 12.4943 4.01471 12.6669C4.11435 12.8395 4.22124 13.0063 4.33502 13.1671C5.26732 12.9721 6.26055 13.1151 7.12453 13.6139ZM9.49952 11.8753C8.18788 11.8753 7.12453 10.812 7.12453 9.50026C7.12453 8.18863 8.18788 7.12527 9.49952 7.12527C10.8112 7.12527 11.8745 8.18863 11.8745 9.50026C11.8745 10.812 10.8112 11.8753 9.49952 11.8753ZM9.49952 10.2919C9.93675 10.2919 10.2912 9.9375 10.2912 9.50026C10.2912 9.06302 9.93675 8.70859 9.49952 8.70859C9.06228 8.70859 8.70785 9.06302 8.70785 9.50026C8.70785 9.9375 9.06228 10.2919 9.49952 10.2919Z"
-                  fill="black"
-                />
-              </svg>
-              Settings
+              Overview
             </button>
           </li>
-          <!-- logout -->
-          <li class="ml-4" role="presentation">
+          <!-- What is include -->
+          <li class="mx-4" role="presentation">
             <button
               class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              id="logout-tab"
-              data-tabs-target="#logout"
+              id="include-tab"
+              data-tabs-target="#include"
               type="button"
               role="tab"
-              aria-controls="logout"
+              aria-controls="include"
               aria-selected="false"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="19"
-                viewBox="0 0 19 19"
-                class="fill-re text-#91112B"
-              >
-                <path
-                  fill="black"
-                  d="M9.50065 17.4166C5.12839 17.4166 1.58398 13.8721 1.58398 9.49992C1.58398 5.12766 5.12839 1.58325 9.50065 1.58325C12.0904 1.58325 14.3897 2.82679 15.8341 4.74931L13.6893 4.74937C12.5729 3.76429 11.1065 3.16659 9.50065 3.16659C6.00285 3.16659 3.16732 6.00211 3.16732 9.49992C3.16732 12.9977 6.00285 15.8333 9.50065 15.8333C11.1069 15.8333 12.5736 15.2352 13.6901 14.2498H15.8347C14.3904 16.1727 12.0907 17.4166 9.50065 17.4166ZM15.0423 12.6666V10.2916H8.70898V8.70825H15.0423V6.33325L19.0007 9.49992L15.0423 12.6666Z"
-                />
-              </svg>
-              <span>Log out</span>
+              <span>What is include</span>
+            </button>
+          </li>
+          <!-- Additional Informations -->
+          <li class="mx-4" role="presentation">
+            <button
+              class="flex whitespace-nowrap w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              id="addInfo-tab"
+              data-tabs-target="#addInfo"
+              type="button"
+              role="tab"
+              aria-controls="addInfo"
+              aria-selected="false"
+            >
+              <span>Additional Informations</span>
+            </button>
+          </li>
+          <!-- mediaImages Informations -->
+          <li class="mx-4" role="presentation">
+            <button
+              class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              id="mediaImages-tab"
+              data-tabs-target="#mediaImages"
+              type="button"
+              role="tab"
+              aria-controls="mediaImages"
+              aria-selected="false"
+            >
+              <span>Media And Images</span>
             </button>
           </li>
         </ul>
       </div>
       <div id="myTabContent" class="w-full">
-        <!-- dashboard tab content -->
+        <!-- basic info tab content -->
         <div
           class="hidden p-4 pt-0 rounded-lg"
-          id="dashboard"
+          id="basicInfo"
           role="tabpanel"
-          aria-labelledby="dashboard-tab"
+          aria-labelledby="basicInfo-tab"
         >
           <div class="mb-4">
             <div class="flex flex-col jusitfy-center items-center">
               <div class="p-4 rounded-lg w-full">
-                <h1 class="mt-4">Events</h1>
-                <div
-                  class="flex flex-col lg:flex-row justify-between text-normal mb-6 mt-8"
-                >
-                  <div class="flex jusitfy-center items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="19"
-                      height="19"
-                      viewBox="0 0 19 19"
-                      fill="none"
+                <form class="w-full px-10 py-8" action="#">
+                  <div>
+                    <label
+                      for="surfCampName"
+                      class="block mb-2 text-sm font-xs text-gray-900"
+                      >SurfCamp Name</label
                     >
-                      <path
-                        d="M4.8858 14.2499C5.21183 13.3275 6.09156 12.6666 7.12565 12.6666C8.15973 12.6666 9.03951 13.3275 9.36551 14.2499H17.4173V15.8333H9.36551C9.03951 16.7557 8.15973 17.4166 7.12565 17.4166C6.09156 17.4166 5.21183 16.7557 4.8858 15.8333H1.58398V14.2499H4.8858ZM9.63579 8.70825C9.9618 7.78581 10.8416 7.12492 11.8757 7.12492C12.9097 7.12492 13.7895 7.78581 14.1155 8.70825H17.4173V10.2916H14.1155C13.7895 11.214 12.9097 11.8749 11.8757 11.8749C10.8416 11.8749 9.9618 11.214 9.63579 10.2916H1.58398V8.70825H9.63579ZM4.8858 3.16659C5.21183 2.24414 6.09156 1.58325 7.12565 1.58325C8.15973 1.58325 9.03951 2.24414 9.36551 3.16659H17.4173V4.74992H9.36551C9.03951 5.67236 8.15973 6.33325 7.12565 6.33325C6.09156 6.33325 5.21183 5.67236 4.8858 4.74992H1.58398V3.16659H4.8858ZM7.12565 4.74992C7.56287 4.74992 7.91732 4.39547 7.91732 3.95825C7.91732 3.52103 7.56287 3.16659 7.12565 3.16659C6.68843 3.16659 6.33398 3.52103 6.33398 3.95825C6.33398 4.39547 6.68843 4.74992 7.12565 4.74992ZM11.8757 10.2916C12.3129 10.2916 12.6673 9.93716 12.6673 9.49992C12.6673 9.06268 12.3129 8.70825 11.8757 8.70825C11.4384 8.70825 11.084 9.06268 11.084 9.49992C11.084 9.93716 11.4384 10.2916 11.8757 10.2916ZM7.12565 15.8333C7.56287 15.8333 7.91732 15.4788 7.91732 15.0416C7.91732 14.6043 7.56287 14.2499 7.12565 14.2499C6.68843 14.2499 6.33398 14.6043 6.33398 15.0416C6.33398 15.4788 6.68843 15.8333 7.12565 15.8333Z"
-                        fill="black"
-                      />
-                    </svg>
-                    Filters
-                  </div>
-                  <div
-                    class="flex flex-col lg:flex-row lg:jusitfy-center lg:items-center mt-2 gap-2"
-                  >
-                    <span class="hidden lg:block">Sort By:</span>
-                    <button
-                      id="dropdownDefaultButton"
-                      data-dropdown-toggle="dropdown"
-                      class="text-black w-fit bg-white focus:ring-1 focus:outline-none font-medium rounded text-sm px-5 py-2 text-center inline-flex items-center shadow-lg"
-                      type="button"
-                    >
-                      Recommended
-                      <svg
-                        class="w-2.5 h-2.5 ml-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 10 6"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="m1 1 4 4 4-4"
-                        />
-                      </svg>
-                    </button>
-
-                    <!-- Dropdown menu -->
-                    <div
-                      id="dropdown"
-                      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
-                    >
-                      <ul
-                        class="py-2 text-sm text-gray-700"
-                        aria-labelledby="dropdownDefaultButton"
-                      >
-                        <li>
-                          <a href="#" class="block px-4 py-2 hover:bg-gray-100"
-                            >Dashboard</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#" class="block px-4 py-2 hover:bg-gray-100"
-                            >Settings</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#" class="block px-4 py-2 hover:bg-gray-100"
-                            >Earnings</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#" class="block px-4 py-2 hover:bg-gray-100"
-                            >Sign out</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
-                  <!-- start -->
-                  <div class="h-[228px] max-w-[292px]">
-                    <img
-                      class="h-full w-full object-fit"
-                      src="./assets/images/profilesurf.png"
+                    <input
+                      type="text"
+                      name="surfCampName"
+                      id="surfCampName"
+                      placeholder="Example SurfCamp Name Here"
+                      required
+                      class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
                     />
                   </div>
-                  <!-- mid -->
-                  <div class="flex flex-col justify-start pt-4 pb-2">
-                    <h1 class="text-2xl font-bold">Performance surf camp</h1>
-                    <p class="text-xs text-normal my-1 opacity-50">
-                      3 nights 2 lessons
-                    </p>
-                    <!-- star -->
-                    <div class="flex items-center my-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="18"
-                        viewBox="0 0 19 18"
-                        fill="none"
-                      >
-                        <path
-                          d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
-                          fill="#FFAD32"
-                        />
-                      </svg>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="18"
-                        viewBox="0 0 19 18"
-                        fill="none"
-                      >
-                        <path
-                          d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
-                          fill="#FFAD32"
-                        />
-                      </svg>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="18"
-                        viewBox="0 0 19 18"
-                        fill="none"
-                      >
-                        <path
-                          d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
-                          fill="#FFAD32"
-                        />
-                      </svg>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="18"
-                        viewBox="0 0 19 18"
-                        fill="none"
-                      >
-                        <path
-                          d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
-                          fill="#FFAD32"
-                        />
-                      </svg>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="18"
-                        viewBox="0 0 19 18"
-                        fill="none"
-                      >
-                        <path
-                          d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
-                          fill="#FFAD32"
-                        />
-                      </svg>
-                      <span class="ml-2 Helvetica text-xs text-normal"
-                        >1241 Reviews</span
-                      >
-                    </div>
-                    <!-- end -->
-                    <div class="flex gap-3 text-xs text-normal mt-8">
-                      <div class="opacity-50 flex flex-col">
-                        <span>Skill Level:</span>
-                        <span>Location:</span>
-                        <span>Persons:</span>
-                        <span>Arrival Date:</span>
-                      </div>
-                      <div class="flex flex-col">
-                        <span>Beginner</span>
-                        <span>Canada</span>
-                        <span>1 Person</span>
-                        <span>5 Days</span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end -->
-                  <div
-                    class="flex flex-col justify-between xl:items-end pt-4 pb-2 pr-4"
-                  >
-                    <h1 class="text-xl font-bold dark-blue mb-2">
-                      $100 / Per Package
-                    </h1>
-                    <a
-                      href="./ManageEvent.html"
-                      class="bg-dark-blue rounded-md flex justify-center items-center text-white py-2.5 px-7 w-fit gap-2"
+                  <div>
+                    <label
+                      for="About"
+                      class="block mb-2 text-sm font-xs text-gray-900"
+                      >About Surfcamp</label
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="19"
-                        viewBox="0 0 19 19"
-                        fill="none"
-                      >
-                        <path
-                          d="M5.73376 14.2471H2.375V10.8884L11.4277 1.83563C11.7369 1.52647 12.2381 1.52647 12.5473 1.83563L14.7865 4.07481C15.0957 4.38397 15.0957 4.88523 14.7865 5.19439L5.73376 14.2471ZM2.375 15.8304H16.625V17.4138H2.375V15.8304Z"
-                          fill="white"
-                        />
-                      </svg>
-                      Manage Event
-                    </a>
+                    <textarea
+                      id="About"
+                      name="aboutSurfcamp"
+                      rows="4"
+                      class="block p-2.5 w-full text-sm text-gray-900 light-blue rounded-lg border-none focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="About SurfCamp Here..."
+                    ></textarea>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- message tab content -->
-        <div
-          class="hidden p-4 rounded-lg"
-          id="message"
-          role="tabpanel"
-          aria-labelledby="message-tab"
-        >
-          <p class="text-sm text-gray-500">
-            This is some placeholder content the
-            <strong class="font-medium text-gray-800"
-              >Dashboard tab's associated content</strong
-            >. Clicking another tab will toggle the visibility of this one for
-            the next. The tab JavaScript swaps classes to control the content
-            visibility and styling.
-          </p>
-        </div>
-        <!-- request notification tab content -->
-        <div
-          class="hidden p-4 rounded-lg"
-          id="notification"
-          role="tabpanel"
-          aria-labelledby="notification-tab"
-        >
-          <h1 class="mb-2 text-base mt-4">Requests</h1>
-          <div class="mb-4 border-b border-gray-200">
-            <ul
-              class="flex flex-wrap -mb-px text-sm font-medium text-center"
-              id="default-tab"
-              data-tabs-toggle="#default-tab-content"
-              role="tablist"
-            >
-              <li class="mr-2" role="presentation">
-                <button
-                  class="inline-block p-4 border-b-2 rounded-t-lg"
-                  id="pending-tab"
-                  data-tabs-target="#pending"
-                  type="button"
-                  role="tab"
-                  aria-controls="pending"
-                  aria-selected="false"
-                >
-                  Pending
-                </button>
-              </li>
-              <li class="mr-2" role="presentation">
-                <button
-                  class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
-                  id="approved-tab"
-                  data-tabs-target="#approved"
-                  type="button"
-                  role="tab"
-                  aria-controls="approved"
-                  aria-selected="false"
-                >
-                  Approved
-                </button>
-              </li>
-              <li class="mr-2" role="presentation">
-                <button
-                  class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
-                  id="reject-tab"
-                  data-tabs-target="#reject"
-                  type="button"
-                  role="tab"
-                  aria-controls="reject"
-                  aria-selected="false"
-                >
-                  Reject
-                </button>
-              </li>
-              <li role="presentation">
-                <button
-                  class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
-                  id="cancelled-tab"
-                  data-tabs-target="#cancelled"
-                  type="button"
-                  role="tab"
-                  aria-controls="cancelled"
-                  aria-selected="false"
-                >
-                  Cancelled
-                </button>
-              </li>
-              <li role="presentation">
-                <button
-                  class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300"
-                  id="paid-tab"
-                  data-tabs-target="#paid"
-                  type="button"
-                  role="tab"
-                  aria-controls="paid"
-                  aria-selected="false"
-                >
-                  Paid
-                </button>
-              </li>
-            </ul>
-          </div>
-          <div id="default-tab-content">
-            <div
-              class="hidden rounded-lg"
-              id="pending"
-              role="tabpanel"
-              aria-labelledby="pending-tab"
-            >
-              <div
-                class="flex flex-col lg:flex-row justify-between text-normal mb-6 mt-8"
-              >
-                <div class="flex items-center">
-                  <input
-                    checked
-                    id="checked-checkbox"
-                    type="checkbox"
-                    value=""
-                    class="w-4 h-4 text-gray-600 bg-white border-gray-300 focus:ring-gray-500 focus:ring-2"
-                  />
-                  <label
-                    for="checked-checkbox"
-                    class="ml-2 text-base font-normal opacity-50"
-                    >View Only Upcoming Bookings</label
+                  <span
+                    class="text-xs opacity-50 font-normal text-normal flex justify-end"
+                    >Max 150 Character</span
                   >
-                </div>
-                <div
-                  class="flex flex-col lg:flex-row lg:jusitfy-center lg:items-center mt-2 gap-2"
-                >
-                  <span class="hidden lg:block">Sort By:</span>
-                  <button
-                    id="dropdownButton2"
-                    data-dropdown-toggle="dropdown2"
-                    class="text-black w-fit bg-white focus:ring-1 focus:outline-none font-medium rounded text-sm px-5 py-2 text-center inline-flex items-center shadow-lg"
-                    type="button"
-                  >
-                    Recommended
-                    <svg
-                      class="w-2.5 h-2.5 ml-2.5"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 10 6"
+                  <!-- Location -->
+                  <div>
+                    <label
+                      for="location"
+                      class="block mb-2 text-sm font-xs text-gray-900"
+                      >SurfCamp Location</label
                     >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="m1 1 4 4 4-4"
-                      />
-                    </svg>
-                  </button>
+                    <input
+                      type="text"
+                      name="location"
+                      id="location"
+                      placeholder="Location Name Here"
+                      required
+                      class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                    />
+                  </div>
+                  <!-- surfer level -->
+                  <div>
+                    <label
+                      for="surferLevel"
+                      class="block mb-2 text-sm font-xs text-gray-900"
+                      >Surfer Level</label
+                    >
 
-                  <!-- Dropdown menu -->
-                  <div
-                    id="dropdown2"
-                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
-                  >
-                    <ul
-                      class="py-2 text-sm text-gray-700"
-                      aria-labelledby="dropdownButton2"
-                    >
+                    <ul class="flex gap-6">
                       <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100"
-                          >Dashboard</a
-                        >
+                        <div class="flex items-center">
+                          <input
+                            id="beginner"
+                            type="radio"
+                            value="beginner"
+                            name="list-radio"
+                            class="hidden peer"
+                            checked
+                          />
+                          <label
+                            for="beginner"
+                            class="px-10 py-3 bg-light-blue rounded border cursor-pointer peer-checked:border-dark-blue peer-checked:dark-blue py-3 text-sm font-medium peer-checked:opacity-100 opacity-50"
+                            >Beginner
+                          </label>
+                        </div>
                       </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100"
-                          >Settings</a
-                        >
+                      <li class="">
+                        <div class="flex items-center">
+                          <input
+                            id="middle"
+                            type="radio"
+                            value="middle"
+                            name="list-radio"
+                            class="hidden peer"
+                          />
+                          <label
+                            for="middle"
+                            class="px-10 py-3 bg-light-blue rounded border cursor-pointer peer-checked:border-dark-blue peer-checked:dark-blue py-3 text-sm font-medium peer-checked:opacity-100 opacity-50"
+                            >Middle</label
+                          >
+                        </div>
                       </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100"
-                          >Earnings</a
-                        >
+                      <li class="">
+                        <div class="flex items-center">
+                          <input
+                            id="intermediate"
+                            type="radio"
+                            value="intermediate"
+                            name="list-radio"
+                            class="hidden peer"
+                          />
+                          <label
+                            for="intermediate"
+                            class="px-10 py-3 bg-light-blue rounded border cursor-pointer peer-checked:border-dark-blue peer-checked:dark-blue py-3 text-sm font-medium peer-checked:opacity-100 opacity-50"
+                            >Intermediate</label
+                          >
+                        </div>
                       </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100"
-                          >Sign out</a
-                        >
+                      <li class="">
+                        <div class="flex items-center">
+                          <input
+                            id="professional"
+                            type="radio"
+                            value="professional"
+                            name="list-radio"
+                            class="rounded hidden peer"
+                          />
+                          <label
+                            for="professional"
+                            class="px-10 py-3 bg-light-blue rounded border cursor-pointer peer-checked:border-dark-blue peer-checked:dark-blue py-3 text-sm font-medium peer-checked:opacity-100 opacity-50"
+                            >Proffesional</label
+                          >
+                        </div>
                       </li>
                     </ul>
                   </div>
-                </div>
-              </div>
-              <h5 class="text-xs opacity-50">126 Booking Pending</h5>
-              <div class="p-4">
-                <h1 class="text-lg font-bold mt-6">Performance Surf Camp</h1>
-                <div class="flex items-center justify-between flex-wrap">
-                  <div class="flex gap-6 mt-6 flex-col lg:flex-row">
-                    <div class="w-[62px] h-[62px]">
-                      <img
-                        class="w-full h-full object-cover rounded-full"
-                        src="./assets/icons/profile.jpeg"
+                  <!-- duration -->
+                  <div>
+                    <label
+                      for="duration"
+                      class="block mb-2 text-sm font-xs mt-6 text-gray-900"
+                      >SurfCamp Duration</label
+                    >
+                    <div class="relative max-w-sm">
+                      <div
+                        class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="19"
+                          viewBox="0 0 19 19"
+                          fill="none"
+                        >
+                          <g opacity="0.5">
+                            <path
+                              d="M7.1237 0.791748V2.37508H11.8737V0.791748H13.457V2.37508H16.6237C17.0609 2.37508 17.4154 2.72953 17.4154 3.16675V15.8334C17.4154 16.2707 17.0609 16.6251 16.6237 16.6251H2.3737C1.93648 16.6251 1.58203 16.2707 1.58203 15.8334V3.16675C1.58203 2.72953 1.93648 2.37508 2.3737 2.37508H5.54036V0.791748H7.1237ZM15.832 8.70841H3.16536V15.0417H15.832V8.70841ZM6.33203 10.2917V11.8751H4.7487V10.2917H6.33203ZM10.2904 10.2917V11.8751H8.70703V10.2917H10.2904ZM14.2487 10.2917V11.8751H12.6654V10.2917H14.2487ZM5.54036 3.95841H3.16536V7.12508H15.832V3.95841H13.457V5.54175H11.8737V3.95841H7.1237V5.54175H5.54036V3.95841Z"
+                              fill="black"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                      <input
+                        id="dateRange"
+                        name="dateRange"
+                        class="bg-light-blue border border-gray-300 text-black mt-4 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+                        placeholder="Select date range"
+                        required
                       />
                     </div>
-                    <div class="text-xs">
-                      <h2 class="text-base font-bold mb-2">Name Username</h2>
-                      <div class="opacity-70 flex flex-col gap-2">
-                        <p>ruslanqurbanov637@gmail.com</p>
-                        <p>(994) 50 976 75 18</p>
-                        <p>Requests - 2</p>
-                        <p>Duration: August 9 - August 23</p>
-                      </div>
-
-                      <div>
-                        <span class="text-blue"
-                          >Message: Lorem ipsum dolor sit...</span
-                        >
-                        <button
-                          class="text-xs ml-2 mt-2 cursor-pointer font-bold text-blue border-blue rounded px-3 py-1"
-                        >
-                          Send Message
-                        </button>
-                      </div>
-                    </div>
                   </div>
-                  <!-- buttons -->
-                  <div class="flex gap-4 h-fit flex-wrap mt-4">
+                  <!-- class size -->
+                  <div class="flex flex-col mt-4">
+                    <label
+                      for="classSize"
+                      class="block mb-2 text-sm font-medium text-black"
+                      >Maximum Class Size</label
+                    >
+                    <select
+                      id="classSize"
+                      name="classSize"
+                      class="bg-light-blue w-fit border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+                    >
+                      <option selected>10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                    </select>
+                  </div>
+                  <div class="flex gap-2 justify-end mt-10">
                     <button
-                      class="bg-white rounded border-[1px] border-dark-blue text-black px-12 py-2"
+                      type="button"
+                      class="w-fit block text-black font-medium border rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-white mt-6"
                     >
-                      Reject
+                      Cancel
                     </button>
-                    <button class="bg-dark-blue rounded text-white px-12 py-2">
-                      Allow
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="hidden p-4 rounded-lg bg-gray-50"
-              id="approved"
-              role="tabpanel"
-              aria-labelledby="approved-tab"
-            >
-              <div class="flex items-center justify-between flex-wrap">
-                <div class="flex gap-6 mt-6 flex-col lg:flex-row">
-                  <div class="w-[62px] h-[62px]">
-                    <img
-                      class="w-full h-full object-cover rounded-full"
-                      src="./assets/icons/profile.jpeg"
-                    />
-                  </div>
-                  <div class="text-xs">
-                    <h2 class="text-base font-bold mb-2">Name Username</h2>
-                    <div>
-                      <span class="text-blue"
-                        >Message: Lorem ipsum dolor sit...</span
-                      >
-                      <button
-                        class="text-xs ml-2 mt-2 cursor-pointer font-bold text-blue border-blue rounded px-3 py-1"
-                      >
-                        Send Message
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <!-- approve -->
-                <div class="mt-4">
-                  <div class="text-base">
-                    <span class="opacity-50">Payment Status:</span>
-                    <span class="font-bold text-dark-blue"
-                      >Pending Payment</span
+                    <button
+                      type="submit"
+                      class="w-fit block text-white font-medium rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-dark-blue mt-6"
                     >
+                      Save Changes
+                    </button>
                   </div>
-                  <div class="text-base xl:text-right mt-4">
-                    <span class="opacity-50">Status:</span>
-                    <span class="text-green font-bold"> Approved</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="hidden p-4 rounded-lg bg-gray-50"
-              id="reject"
-              role="tabpanel"
-              aria-labelledby="reject-tab"
-            >
-              <div class="flex items-center justify-between flex-wrap">
-                <div class="flex gap-6 mt-6 flex-col lg:flex-row">
-                  <div class="w-[62px] h-[62px]">
-                    <img
-                      class="w-full h-full object-cover rounded-full"
-                      src="./assets/icons/profile.jpeg"
-                    />
-                  </div>
-                  <div class="text-xs">
-                    <h2 class="text-base font-bold mb-2">Name Username</h2>
-                    <div>
-                      <span class="opacity-70"
-                        >Message: Lorem ipsum dolor sit...</span
-                      >
-                      <button
-                        class="text-xs ml-2 mt-2 opacity-70 font-bold border-black border-[1px] rounded px-3 py-1"
-                      >
-                        Question Answered
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <!-- approve -->
-                <div class="mt-4">
-                  <div class="text-base xl:text-right mt-4">
-                    <span class="opacity-50">Status:</span>
-                    <span class="text-dark-red font-bold"> Reject</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="hidden p-4 rounded-lg bg-gray-50"
-              id="cancelled"
-              role="tabpanel"
-              aria-labelledby="cancelled-tab"
-            >
-              <div class="flex items-center justify-between flex-wrap">
-                <div class="flex gap-6 mt-6 flex-col lg:flex-row">
-                  <div class="w-[62px] h-[62px]">
-                    <img
-                      class="w-full h-full object-cover rounded-full"
-                      src="./assets/icons/profile.jpeg"
-                    />
-                  </div>
-                  <div class="text-xs">
-                    <h2 class="text-base font-bold mb-2">Name Username</h2>
-                    <div>
-                      <span class="opacity-70"
-                        >Message: Lorem ipsum dolor sit...</span
-                      >
-                      <button
-                        class="text-xs ml-2 mt-2 opacity-70 font-bold border-black border-[1px] rounded px-3 py-1"
-                      >
-                        Question Answered
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <!-- approve -->
-                <div class="mt-4">
-                  <div class="text-base xl:text-right mt-4">
-                    <span class="opacity-50">Status:</span>
-                    <span class="text-dark-red font-bold"> Cancelled</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="hidden p-4 rounded-lg bg-gray-50"
-              id="paid"
-              role="tabpanel"
-              aria-labelledby="paid-tab"
-            >
-              <div class="flex items-center justify-between flex-wrap">
-                <div class="flex gap-6 mt-6 flex-col lg:flex-row">
-                  <div class="w-[62px] h-[62px]">
-                    <img
-                      class="w-full h-full object-cover rounded-full"
-                      src="./assets/icons/profile.jpeg"
-                    />
-                  </div>
-                  <div class="text-xs">
-                    <h2 class="text-base font-bold mb-2">Name Username</h2>
-                    <div>
-                      <span class="opacity-70"
-                        >Message: Lorem ipsum dolor sit...</span
-                      >
-                      <button
-                        class="text-xs ml-2 mt-2 opacity-70 font-bold border-black border-[1px] rounded px-3 py-1"
-                      >
-                        Question Answered
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <!-- approve -->
-                <div class="mt-4">
-                  <div class="text-base xl:text-right mt-4">
-                    <span class="opacity-50">Status:</span>
-                    <span class="text-green font-bold"> Paid</span>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
-        <!-- setting tab content -->
+        <!-- instructor tab content -->
         <div
           class="hidden p-4 rounded-lg"
-          id="settings"
+          id="instructors"
           role="tabpanel"
-          aria-labelledby="settings-tab"
+          aria-labelledby="instructors-tab"
+        >
+          <p class="text-sm text-gray-500">instructor</p>
+        </div>
+        <!-- price notification tab content -->
+        <div
+          class="hidden p-4 rounded-lg"
+          id="price"
+          role="tabpanel"
+          aria-labelledby="price-tab"
+        >
+          <h1 class="mb-2 text-base mt-4">Price</h1>
+        </div>
+        <!-- overview tab content -->
+        <div
+          class="hidden p-4 rounded-lg"
+          id="overview"
+          role="tabpanel"
+          aria-labelledby="overview-tab"
         >
           <h1 class="mb-10 text-2xl font-bold">Basic Information Settings</h1>
           <form class="w-full px-10 py-8" action="#">
@@ -1339,12 +943,12 @@
           </form>
         </div>
 
-        <!-- logout tab content -->
+        <!-- include tab content -->
         <div
           class="hidden p-4 rounded-lg"
-          id="logout"
+          id="include"
           role="tabpanel"
-          aria-labelledby="logout-tab"
+          aria-labelledby="include-tab"
         >
           <p class="text-sm text-gray-500">
             This is some placeholder content the
@@ -1354,6 +958,24 @@
             the next. The tab JavaScript swaps classes to control the content
             visibility and styling.
           </p>
+        </div>
+        <!-- addInfo tab content -->
+        <div
+          class="hidden p-4 rounded-lg"
+          id="addInfo"
+          role="tabpanel"
+          aria-labelledby="addInfo-tab"
+        >
+          code2
+        </div>
+        <!-- mediaImages tab content -->
+        <div
+          class="hidden p-4 rounded-lg"
+          id="mediaImages"
+          role="tabpanel"
+          aria-labelledby="mediaImages-tab"
+        >
+          code
         </div>
       </div>
     </div>
@@ -1453,6 +1075,7 @@
               id="default-search"
               class="block w-full p-4 pl-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
               placeholder="Search Mockups, Logos..."
+              required
             />
             <button
               type="submit"
@@ -1637,6 +1260,13 @@
           }
         });
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
     </footer>
+    <script>
+      flatpickr("#dateRange", {
+        mode: "range",
+      });
+    </script>
   </body>
 </html>

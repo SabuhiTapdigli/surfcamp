@@ -246,3 +246,7 @@ input.invalid {
   margin-top: 5px;
   opacity: 50%;
 }
+.selectDate::placeholder {
+  color: black;
+  opacity: 50%;
+}
