@@ -29,6 +29,8 @@
           },
           backgroundColor: {
             "dark-red": "#91112B",
+            "dark-gray": "#D9D9D9",
+            blue: "#E3F7FF",
           },
           colors: {
             blue: "#1F4DF2",
@@ -774,7 +776,187 @@
           role="tabpanel"
           aria-labelledby="instructors-tab"
         >
-          <p class="text-sm text-gray-500">instructor</p>
+          <div
+            class="p-4 rounded-lg"
+            id="instructors-container"
+            role="tabpanel"
+            aria-labelledby="instructors-tab"
+          >
+            <div id="instructors-list" class="p-4">
+              <!-- This is where the instructors will be added -->
+            </div>
+
+            <button
+              id="addInstructorBtn"
+              data-modal-target="default-modal"
+              data-modal-toggle="default-modal"
+              class="mx-auto block text-black border border-dark-blue bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center flex jusitfy-center items-center gap-2"
+              type="button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+              >
+                <path d="M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" fill="#062645" />
+              </svg>
+              Add New Instructor
+            </button>
+
+            <!-- modal -->
+            <div
+              id="default-modal"
+              tabindex="-1"
+              aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            >
+              <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                  class="relative bg-white rounded-lg shadow dark:bg-gray-700"
+                >
+                  <!-- Modal header -->
+                  <div
+                    class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                  >
+                    <h3 class="text-xl font-semibold text-gray-900">
+                      Create New Package
+                    </h3>
+                    <button
+                      type="button"
+                      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                      data-modal-hide="default-modal"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 14"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                        />
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                    </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6 space-y-6">
+                    <label
+                      for="nameInput"
+                      class="block text-sm font-xs text-gray-900"
+                      >Name of Instructor</label
+                    >
+                    <input
+                      type="text"
+                      id="nameInput"
+                      placeholder="Name"
+                      class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                    />
+                    <div>
+                      <label
+                        for="About"
+                        class="block mb-2 text-sm font-xs text-gray-900"
+                        >About Instructor</label
+                      >
+                      <textarea
+                        id="aboutInput"
+                        name="aboutInput"
+                        rows="4"
+                        class="block p-2.5 w-full text-sm text-gray-900 light-blue rounded-lg border-none focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="About Instructor Here..."
+                      ></textarea>
+                    </div>
+                    <span
+                      class="text-xs opacity-50 font-normal text-normal flex justify-end"
+                      >Max 150 Character</span
+                    >
+                    <div class="flex flex-col jusitfy-center items-center">
+                      <h1 class="mb-2">Add Instructor Image</h1>
+                      <label for="dropzone-file" class="">
+                        <div class="rounded-full border-2 p-6 bg-dark-gray">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M21 15V18H24V20H21V23H19V20H16V18H19V15H21ZM21.0082 3C21.556 3 22 3.44495 22 3.9934V13H20V5H4V18.999L14 9L17 12V14.829L14 11.8284L6.827 19H14V21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082ZM8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7Z"
+                              fill="#062645"
+                            />
+                          </svg>
+                          <input
+                            id="dropzone-file"
+                            type="file"
+                            class="hidden"
+                          />
+                        </div>
+                      </label>
+                      <p class="mb-4">Add Image</p>
+                      <img
+                        id="selected-image"
+                        src=""
+                        alt="Selected Image"
+                        style="display: none; max-width: 100%"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div
+                    class="flex items-center justify-end p-6 space-x-2 border-t border-gray-200 rounded-b"
+                  >
+                    <button
+                      id="cancelBtn"
+                      data-modal-hide="default-modal"
+                      class="bg-white text-black text-base font-normal py-2 px-10 border border-dark-blue rounded mt-2"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      id="addBtn"
+                      data-modal-hide="default-modal"
+                      class="bg-dark-blue text-white text-base font-normal py-2 px-6 border border-dark-blue rounded mt-2"
+                    >
+                      Add Instructor
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              id="button-container"
+              class="flex justify-end flex-wrap gap-4 mt-6"
+            >
+              <button
+                id="clearInstructorsBtn"
+                class="bg-white text-black text-base font-normal py-2 px-10 border border-dark-blue rounded mt-2"
+              >
+                Clear Changes
+              </button>
+              <button
+                id="saveInstructorsBtn"
+                class="bg-dark-blue text-white text-base font-normal py-2 px-6 border border-dark-blue rounded mt-2"
+              >
+                Save Changes
+              </button>
+            </div>
+            <!-- The popup form -->
+          </div>
+
+          <form id="instructorsForm">
+            <!-- Hidden input field to store the JSON data -->
+            <input type="hidden" id="instructorsData" name="instructorsData" />
+          </form>
         </div>
         <!-- price notification tab content -->
         <div
@@ -1268,5 +1450,6 @@
         mode: "range",
       });
     </script>
+    <script src="./assets/js/editable.js"></script>
   </body>
 </html>

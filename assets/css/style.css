@@ -250,3 +250,6 @@ input.invalid {
   color: black;
   opacity: 50%;
 }
+#instructors-list > div {
+  display: flex;
+}
