@@ -459,6 +459,20 @@
           data-tabs-toggle="#myTabContent"
           role="tablist"
         >
+          <!-- What is include -->
+          <li class="mx-4" role="presentation">
+            <button
+              class="flex w-full gap-2 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              id="include-tab"
+              data-tabs-target="#include"
+              type="button"
+              role="tab"
+              aria-controls="include"
+              aria-selected="false"
+            >
+              <span>What is include</span>
+            </button>
+          </li>
           <!-- Basic Information -->
           <li class="mx-4" role="presentation">
             <button
@@ -950,7 +964,6 @@
                 Save Changes
               </button>
             </div>
-            <!-- The popup form -->
           </div>
 
           <form id="instructorsForm">
@@ -965,7 +978,187 @@
           role="tabpanel"
           aria-labelledby="price-tab"
         >
-          <h1 class="mb-2 text-base mt-4">Price</h1>
+          <form class="w-full px-10 py-8" action="#">
+            <div>
+              <label
+                for="packagePrice"
+                class="block mb-2 text-sm font-xs text-gray-900"
+                >Set Package Price</label
+              >
+              <input
+                type="text"
+                name="packagePrice"
+                id="packagePrice"
+                placeholder="100$"
+                class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+              />
+            </div>
+            <h1 class="text-xs">Set Packages</h1>
+            <div id="package-list">
+              <!-- This is where the packages will be added -->
+            </div>
+            <button
+              id="addPackage"
+              data-modal-target="package"
+              data-modal-toggle="package"
+              class="mt-4 block text-black border border-dark-blue bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center flex jusitfy-center items-center gap-2"
+              type="button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+              >
+                <path d="M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" fill="#062645" />
+              </svg>
+              Create New Package
+            </button>
+
+            <!-- modal -->
+            <div
+              id="package"
+              tabindex="-1"
+              aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            >
+              <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                  class="relative bg-white rounded-lg shadow dark:bg-gray-700"
+                >
+                  <!-- Modal header -->
+                  <div
+                    class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                  >
+                    <h3 class="text-xl font-semibold text-gray-900">
+                      Create New Package
+                    </h3>
+                    <button
+                      type="button"
+                      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                      data-modal-hide="package"
+                    >
+                      <svg
+                        class="w-3 h-3"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 14"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                        />
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                    </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6 space-y-6">
+                    <label
+                      for="daysInput"
+                      class="block text-sm font-xs text-gray-900"
+                      >How long will the lesson be?</label
+                    >
+                    <input
+                      type="text"
+                      id="daysInput"
+                      placeholder="7 Days"
+                      class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                    />
+                    <div>
+                      <label
+                        for="accommodation"
+                        class="block mb-2 text-sm font-xs text-gray-900"
+                        >Write About Accomodation</label
+                      >
+                      <input
+                        type="text"
+                        id="accommodation"
+                        placeholder="Shared Public Room"
+                        class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
+                      />
+                    </div>
+
+                    <div class="flex flex-col jusitfy-center items-center">
+                      <h1 class="mb-2">Add Accomondation Images</h1>
+                      <label for="multiImages" class="">
+                        <div
+                          class="rounded-md border-2 border-dark-blue px-6 py-4 bg-light-blue flex flex-col jusitfy-center items-center gap-2"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M21 15V18H24V20H21V23H19V20H16V18H19V15H21ZM21.0082 3C21.556 3 22 3.44495 22 3.9934V13H20V5H4V18.999L14 9L17 12V14.829L14 11.8284L6.827 19H14V21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082ZM8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7Z"
+                              fill="#062645"
+                            />
+                          </svg>
+                          <input
+                            id="multiImages"
+                            type="file"
+                            class="hidden"
+                            multiple
+                          />
+                          <div>Add Image</div>
+                        </div>
+                      </label>
+                      <div id="output" class="flex mt-10 gap-4 flex-wrap"></div>
+                    </div>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div
+                    class="flex items-center justify-end p-6 space-x-2 border-t border-gray-200 rounded-b"
+                  >
+                    <button
+                      id="cancelPackageBtn"
+                      data-modal-hide="package"
+                      class="bg-white text-black text-base font-normal py-2 px-10 border border-dark-blue rounded mt-2"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      id="addPackageBtn"
+                      type="button"
+                      data-modal-hide="package"
+                      class="bg-dark-blue text-white text-base font-normal py-2 px-6 border border-dark-blue rounded mt-2"
+                    >
+                      Add Package
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="button-container"
+              class="flex justify-end flex-wrap gap-4 mt-6"
+            >
+              <button
+                id="clearPackageBtn"
+                type="button"
+                class="bg-white text-black text-base font-normal py-2 px-10 border border-dark-blue rounded mt-2"
+              >
+                Clear Changes
+              </button>
+              <button
+                id="savePackageBtn"
+                class="bg-dark-blue text-white text-base font-normal py-2 px-6 border border-dark-blue rounded mt-2"
+              >
+                Save Changes
+              </button>
+            </div>
+          </form>
         </div>
         <!-- overview tab content -->
         <div
@@ -974,150 +1167,215 @@
           role="tabpanel"
           aria-labelledby="overview-tab"
         >
-          <h1 class="mb-10 text-2xl font-bold">Basic Information Settings</h1>
           <form class="w-full px-10 py-8" action="#">
-            <div>
+            <!-- classes -->
+            <div class="mb-4">
               <label
-                for="schoolName"
-                class="block mb-2 text-sm font-xs text-gray-900"
-                >School Name</label
-              >
-              <input
-                type="text"
-                name="schoolName"
-                id="schoolName"
-                placeholder="Example Name"
-                required
-                class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-              />
-            </div>
-            <div>
-              <label
-                for="officialName"
-                class="block mb-2 text-sm font-xs text-gray-900"
-                >Official Name</label
-              >
-              <input
-                type="text"
-                name="officialName"
-                id="officialName"
-                placeholder="Example Name"
-                required
-                class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-              />
-            </div>
-            <div>
-              <label
-                for="location"
-                class="block mb-2 text-sm font-xs text-gray-900"
-                >Location</label
-              >
-              <input
-                type="text"
-                name="location"
-                id="location"
-                placeholder="Location"
-                required
-                class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-              />
-            </div>
-            <div>
-              <label
-                for="gmail"
-                class="block mb-2 text-sm font-xs text-gray-900"
-                >Gmail</label
-              >
-              <input
-                type="email"
-                name="gmail"
-                id="gmail"
-                placeholder="Gmail"
-                required
-                class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-              />
-            </div>
-            <div>
-              <label
-                for="phoneNumber"
-                class="block mb-2 text-sm font-xs text-gray-900"
-                >Number</label
-              >
-              <input
-                type="phoneNumber"
-                name="phoneNumber"
-                id="phoneNumber"
-                placeholder="Number"
-                class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-                required
-              />
-            </div>
+                for="classes"
+                class="block mb-4 text-sm font-xs font-bold flex gap-2 jusitfy-center items-center"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_958_747)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.09933 1.92898C4.31215 1.92898 5.29541 2.91224 5.29541 4.12506C5.29541 5.33811 4.31215 6.32137 3.09933 6.32137C1.88628 6.32137 0.903023 5.33811 0.903023 4.12506C0.903023 2.91224 1.88628 1.92898 3.09933 1.92898ZM2.84824 12.5896C3.88737 12.5896 4.72998 13.4322 4.72998 14.4714C4.72998 15.5107 3.88737 16.3531 2.84824 16.3531C1.80889 16.3531 0.966501 15.5107 0.966501 14.4714C0.966501 13.4322 1.80889 12.5896 2.84824 12.5896ZM8.75541 12.5896C9.79454 12.5896 10.6369 13.4322 10.6369 14.4714C10.6369 15.5107 9.79454 16.3531 8.75541 16.3531C7.71607 16.3531 6.87367 15.5107 6.87367 14.4714C6.87367 13.4322 7.71607 12.5896 8.75541 12.5896ZM14.6626 12.5896C15.7017 12.5896 16.5443 13.4322 16.5443 14.4714C16.5443 15.5107 15.7017 16.3531 14.6626 16.3531C13.6232 16.3531 12.7808 15.5107 12.7808 14.4714C12.7808 13.4322 13.6232 12.5896 14.6626 12.5896ZM8.47041 1.18311H16.58C17.3617 1.18311 18.0013 1.82267 18.0013 2.60441V8.38354C18.0013 9.16528 17.3617 9.80506 16.58 9.80506H8.47041C7.70607 9.80506 7.07759 9.19332 7.0502 8.43528L9.53389 5.95158C10.1356 5.34985 10.1354 4.36789 9.53389 3.76637C8.93237 3.16463 7.95041 3.16463 7.34867 3.76637L7.04911 4.06593V2.60441C7.04911 1.82267 7.68867 1.18311 8.47041 1.18311ZM9.07802 7.61789H15.9724V8.11441H9.07802V7.61789ZM10.5415 5.24572H15.9724V5.74245H10.5415V5.24572ZM11.1048 2.87376H15.9724V3.37028H11.1048V2.87376ZM9.1828 4.11745C9.59063 4.52528 9.59063 5.19267 9.1828 5.6005L6.18693 8.59637V11.3198H0.0117188V8.10419C0.0117188 7.41202 0.578023 6.84572 1.26998 6.84572H4.92846C4.94259 6.84572 4.95672 6.84615 4.97063 6.84659L7.69976 4.11745C8.10759 3.70963 8.77498 3.70963 9.1828 4.11745Z"
+                      fill="black"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_958_747">
+                      <rect width="18" height="18" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Classes
+              </label>
+              <textarea
+                id="classes"
+                name="classes"
+                rows="7"
+                class="block p-4 w-full text-sm text-gray-900 light-blue rounded-lg border-none focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Students learn surfing in small groups with instructors, suitable for all levels.
 
-            <div class="flex gap-2 justify-end mt-10">
-              <button
-                type="button"
-                class="w-fit block text-black font-medium border rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-white mt-6"
+              Small groups of max 8 students per instructor
+              All surf equipment is included
+              Lessons are in Spanish and English
+              Two photo shootings 10:00 - 12:00 on Tuesdays and Fridays
+              1 day of functional training in Drysurf gym"
+              ></textarea>
+            </div>
+            <!-- Transport -->
+            <div class="mb-4">
+              <label
+                for="transport"
+                class="block mb-4 text-sm font-xs font-bold flex gap-2 jusitfy-center items-center"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_958_730)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.71084 15.7484V17.242C5.71084 17.6374 5.37349 17.9669 4.96386 17.9669H2.98795C2.55422 17.9669 2.21687 17.6374 2.21687 17.242V15.7484H0.891566V6.83084C0.385542 6.80888 0 6.43548 0 5.97423V4.61243C0 4.17314 0.385542 3.77778 0.891566 3.75581V3.11884C0.891566 -1.03245 17.1084 -1.03245 17.1084 3.11884V3.75581C17.5904 3.77778 18 4.17314 18 4.61243V5.97423C18 6.43548 17.5904 6.80888 17.1084 6.83084L17.0843 15.7484H15.7831V17.242C15.7831 17.6374 15.4458 17.9669 15.012 17.9669H13.0602C12.6265 17.9669 12.2892 17.6374 12.2892 17.242V15.7484H5.71084ZM5.85542 1.62525C5.61446 1.62525 5.42169 1.80097 5.42169 2.02062V2.81134C5.42169 3.03098 5.61446 3.2067 5.85542 3.2067H12.1446C12.3855 3.2067 12.5783 3.03098 12.5783 2.81134V2.02062C12.5783 1.80097 12.3855 1.62525 12.1446 1.62525H5.85542ZM2.50602 4.74422V9.55444C6.89157 10.5648 11.1084 10.5648 15.494 9.55444V4.74422H2.50602ZM13.2289 12.3439C12.5301 12.3439 12 12.8491 12 13.4641C12 14.0572 12.5301 14.5624 13.2289 14.5624C13.8795 14.5624 14.4337 14.0572 14.4337 13.4641C14.4337 12.8491 13.8795 12.3439 13.2289 12.3439ZM4.79518 12.3439C5.44578 12.3439 6 12.8491 6 13.4641C6 14.0572 5.44578 14.5624 4.79518 14.5624C4.12048 14.5624 3.59036 14.0572 3.59036 13.4641C3.59036 12.8491 4.12048 12.3439 4.79518 12.3439Z"
+                      fill="black"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_958_730">
+                      <rect width="18" height="18" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Transport
+              </label>
+              <textarea
+                id="transport"
+                name="transport"
+                rows="7"
+                class="block p-4 w-full text-sm text-gray-900 light-blue rounded-lg border-none focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Students gather at the school before class, get wetsuit and surf board. Then:
+
+                Students get to the van and school drives the group to the beach
+                Surf theory and practice at the beach from 10:00 to 12:00
+                30 mins break at the beach
+                Second session of surf theory and practice at the beach from 12:30 to 14:30
+                Students get back in the van and school drives everyone back"
+              ></textarea>
+            </div>
+            <!-- Accomodation -->
+            <div class="mb-4">
+              <label
+                for="accomodation"
+                class="block mb-4 text-sm font-xs font-bold flex gap-2 jusitfy-center items-center"
               >
-                Cancel
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_958_736)">
+                    <path
+                      d="M-0.046875 17.9109H3.78547V8.15308H-0.046875V17.9109ZM1.28279 9.50018H2.45581V10.6886H1.28279V9.50018ZM2.45581 16.5638H1.28279V15.3754H2.45581V16.5638ZM1.28279 13.6262V12.4378H2.45581V13.6262H1.28279Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M14.2109 8.15308V17.9109H18.0433V8.15308H14.2109ZM16.7136 16.5638H15.5406V15.3754H16.7136V16.5638ZM15.5406 9.50018H16.7136V10.6886H15.5406V9.50018ZM16.7136 12.4378V13.6262H15.5406V12.4378H16.7136Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M4.18359 17.9109H7.24806V14.5366C7.24806 14.4256 7.33639 14.335 7.4471 14.335H8.80031V17.9109H9.19839V14.335H10.5516C10.6611 14.335 10.7506 14.4256 10.7506 14.5366V17.9109H13.8151V5.96359L8.99935 1.61206L4.18359 5.96359V17.9109ZM6.68628 12.9294H5.51326V11.741H6.68628V12.9294ZM5.51326 8.80456H6.68628V9.99297H5.51326V8.80456ZM11.3124 8.80456H12.4854V9.99297H11.3124V8.80456ZM12.4854 12.9294H11.3124V11.741H12.4854V12.9294ZM9.58586 12.9294H8.41402V11.741H9.58586V12.9294ZM8.41284 9.99178V8.80337H9.58468V9.99178H8.41284ZM8.99935 6.59956C8.41284 6.59956 7.93703 6.11632 7.93703 5.52331C7.93703 4.9303 8.41402 4.44706 8.99935 4.44706C9.58468 4.44706 10.0617 4.9303 10.0617 5.52331C10.0617 6.11632 9.58586 6.59956 8.99935 6.59956Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M15.1811 5.5686L8.99678 -0.0202637L2.8125 5.5686L3.34837 6.17712L3.84891 5.72491L3.85244 5.72133L8.86605 1.19082C8.94143 1.1228 9.05567 1.1228 9.13104 1.19082L14.1447 5.72133L14.1482 5.72491L14.6487 6.17712L15.1811 5.5686Z"
+                      fill="black"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_958_736">
+                      <rect width="18" height="18" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                Accomodation
+              </label>
+              <textarea
+                id="accomodation"
+                name="accomodation"
+                rows="1"
+                class="block p-4 w-full text-sm text-gray-900 light-blue rounded-lg border-none focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Accommodation is not provided. You'll need to find a place to stay in Lanzarote yourself."
+              ></textarea>
+            </div>
+            <!-- Food -->
+            <div class="mb-4">
+              <label
+                for="food"
+                class="block mb-4 text-sm font-xs font-bold flex gap-2 jusitfy-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="13"
+                  viewBox="0 0 18 13"
+                  fill="none"
+                >
+                  <path
+                    d="M8.1705 1.9286C6.45069 2.13105 4.86495 2.95752 3.71393 4.25131C2.56292 5.5451 1.92666 7.21627 1.92578 8.94796V9.77081C1.92578 9.94131 1.99351 10.1048 2.11407 10.2254C2.23463 10.3459 2.39814 10.4137 2.56864 10.4137H15.4258C15.5963 10.4137 15.7598 10.3459 15.8804 10.2254C16.0009 10.1048 16.0686 9.94131 16.0686 9.77081V8.94796C16.0678 7.21627 15.4315 5.5451 14.2805 4.25131C13.1295 2.95752 11.5437 2.13105 9.82392 1.9286C9.91317 1.78096 9.96071 1.61189 9.9615 1.43938C9.9615 1.18364 9.8599 0.938369 9.67906 0.757531C9.49822 0.576692 9.25295 0.475098 8.99721 0.475098C8.74147 0.475098 8.4962 0.576692 8.31536 0.757531C8.13452 0.938369 8.03292 1.18364 8.03292 1.43938C8.03371 1.61189 8.08125 1.78096 8.1705 1.9286Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M17.3787 11.5964H0.61942C0.448923 11.5964 0.28541 11.6642 0.164851 11.7847C0.0442919 11.9053 -0.0234375 12.0688 -0.0234375 12.2393C-0.0234375 12.4098 0.0442919 12.5733 0.164851 12.6939C0.28541 12.8144 0.448923 12.8821 0.61942 12.8821H17.3787C17.5492 12.8821 17.7127 12.8144 17.8333 12.6939C17.9538 12.5733 18.0216 12.4098 18.0216 12.2393C18.0216 12.0688 17.9538 11.9053 17.8333 11.7847C17.7127 11.6642 17.5492 11.5964 17.3787 11.5964Z"
+                    fill="black"
+                  />
+                </svg>
+                Food
+              </label>
+              <textarea
+                id="food"
+                name="food"
+                rows="2"
+                class="block p-4 w-full text-sm text-gray-900 light-blue rounded-lg border-none focus:ring-blue-500 focus:border-blue-500"
+                placeholder="School does not provide food, but it is recommended to take food and something to drink, for a break between sessions during the day. Also there are plenty of cafes and restaurants in the area where you can enjoy dinner after your surf day"
+              ></textarea>
+            </div>
+            <!-- Airport transfer -->
+            <div class="mb-4">
+              <label
+                for="transfer"
+                class="block mb-4 text-sm font-xs font-bold flex gap-2 jusitfy-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="13"
+                  viewBox="0 0 18 13"
+                  fill="none"
+                >
+                  <path
+                    d="M8.1705 1.9286C6.45069 2.13105 4.86495 2.95752 3.71393 4.25131C2.56292 5.5451 1.92666 7.21627 1.92578 8.94796V9.77081C1.92578 9.94131 1.99351 10.1048 2.11407 10.2254C2.23463 10.3459 2.39814 10.4137 2.56864 10.4137H15.4258C15.5963 10.4137 15.7598 10.3459 15.8804 10.2254C16.0009 10.1048 16.0686 9.94131 16.0686 9.77081V8.94796C16.0678 7.21627 15.4315 5.5451 14.2805 4.25131C13.1295 2.95752 11.5437 2.13105 9.82392 1.9286C9.91317 1.78096 9.96071 1.61189 9.9615 1.43938C9.9615 1.18364 9.8599 0.938369 9.67906 0.757531C9.49822 0.576692 9.25295 0.475098 8.99721 0.475098C8.74147 0.475098 8.4962 0.576692 8.31536 0.757531C8.13452 0.938369 8.03292 1.18364 8.03292 1.43938C8.03371 1.61189 8.08125 1.78096 8.1705 1.9286Z"
+                    fill="black"
+                  />
+                  <path
+                    d="M17.3787 11.5964H0.61942C0.448923 11.5964 0.28541 11.6642 0.164851 11.7847C0.0442919 11.9053 -0.0234375 12.0688 -0.0234375 12.2393C-0.0234375 12.4098 0.0442919 12.5733 0.164851 12.6939C0.28541 12.8144 0.448923 12.8821 0.61942 12.8821H17.3787C17.5492 12.8821 17.7127 12.8144 17.8333 12.6939C17.9538 12.5733 18.0216 12.4098 18.0216 12.2393C18.0216 12.0688 17.9538 11.9053 17.8333 11.7847C17.7127 11.6642 17.5492 11.5964 17.3787 11.5964Z"
+                    fill="black"
+                  />
+                </svg>
+                Airport transfer
+              </label>
+              <textarea
+                id="transfer"
+                name="transfer"
+                rows="2"
+                class="block p-4 w-full text-sm text-gray-900 light-blue rounded-lg border-none focus:ring-blue-500 focus:border-blue-500"
+                placeholder="You can take a taxi or rent a car at the airport for an affordable price. Otherwise, please check the availability of the buses to drive to Famara.
+                  "
+              ></textarea>
+            </div>
+            <div class="flex justify-end flex-wrap gap-4 mt-6">
+              <button
+                id="clearOverviewBtn"
+                type="button"
+                class="bg-white text-black text-base font-normal py-2 px-10 border border-dark-blue rounded mt-2"
+              >
+                Clear Changes
               </button>
               <button
+                id="saveOverviewBtn"
                 type="submit"
-                class="w-fit block text-white font-medium rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-dark-blue mt-6"
-              >
-                Save Changes
-              </button>
-            </div>
-          </form>
-          <h1 class="mb-10 text-2xl font-bold">Password Settings</h1>
-          <form class="w-full px-10 py-8" action="#">
-            <div>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-                class="w-full border-none mb-5 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-                onkeyup="checkPassword()"
-              />
-            </div>
-            <div>
-              <input
-                type="password"
-                name="confirm-password"
-                id="confirm-password"
-                placeholder="Confirm Password"
-                class="w-full border-none mb-2 light-blue text-gray-900 sm:text-sm rounded-lg p-2.5"
-                onkeyup="checkPassword()"
-              />
-            </div>
-
-            <ol class="relative mt-6 text-gray-500">
-              <li class="mb-2 flex items-center">
-                <p id="length" class="text-base invalid">
-                  At Least 8 character
-                </p>
-              </li>
-              <li class="mb-2 flex items-center">
-                <p id="number" class="text-base invalid">1 Number</p>
-              </li>
-              <li class="mb-2 flex items-center">
-                <p id="uppercase" class="text-base invalid">1 Uppercase</p>
-              </li>
-              <li class="flex items-center">
-                <p id="lowercase" class="text-base invalid">1 Lowercase</p>
-              </li>
-            </ol>
-
-            <div class="flex gap-2 justify-end mt-10">
-              <button
-                type="button"
-                class="w-fit block text-black font-medium border rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-white mt-6"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                id="submitButton"
-                class="w-fit block text-white font-medium rounded-lg text-base Helvetica px-10 py-2.5 text-center bg-dark-blue mt-6"
+                class="bg-dark-blue text-white text-base font-normal py-2 px-6 border border-dark-blue rounded mt-2"
               >
                 Save Changes
               </button>
@@ -1451,5 +1709,7 @@
       });
     </script>
     <script src="./assets/js/editable.js"></script>
+    <script src="./assets/js/multipleImages.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
   </body>
 </html>
